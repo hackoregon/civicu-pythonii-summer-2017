@@ -44,20 +44,27 @@ Throughout this course we will be using Git and GitHub as a convenient way to sh
 
 #### Steps for class GitHub setup
 * Fork the class repo to your GitHub account
-  * [class repo](https://github.com/Zak-Kent/Hack_O_class)
+  * [class repo](https://github.com/hackoregon/civicu-pythonii-summer-2017)
 * Clone the forked repo onto your local machine
   * `git clone <github_url_to_forked_repo>`
-* Run the command `git remote -v` you should see your the repo your forked to your GitHub as `origin`
+* Move into the directory of the repo you just cloned
+* Run the command `git remote -v` you should see the repo you forked to your GitHub as `origin`
 * Link your forked repo to the original
   * [docs on configuring a remote fork](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
+  * URL for `upsteam` repo: `https://github.com/hackoregon/civicu-pythonii-summer-2017.git`
 * Sync your forked repo with the original
   * We will follow the process in the link below to get new code for each day in class
   * [docs on syncing a fork](https://help.github.com/articles/syncing-a-fork/)
-* Make a new directory using your name as the title inside the `student-work` directory in the class repo
+* Make a new directory using your name as the title inside the `student-work` directory in the class repo. Using the command `mkdir <your_name_here>`
 * Inside your newly created directory use the command `touch README.md` to create a new README.md file 
-* Use git to add and commit the file you just created
+* Use git to add and commit the file you just created 
+    * Remember the commands `git status`, `git add`, and `git commit -m "your message here"`
 * Push the changes to your GitHub fork (called `origin`) with the command `git push origin master`
-* Go to GitHub and make a pull request against the class repo with your changes
+* Go to your forked `civicu-pythonii-summer-2017` repo on GitHub and make a pull request against the class repo with your changes
+  * URL to your forked repo `https://github.com/<your_user_name>/civicu-pythonii-summer-2017`
+  * Click on `new pull request` button
+  * Make sure the base fork is: `hackoregon/civicu-pythonii-summer-2017` and that the base branch is `master`
+  * Click `create pull request`
 
 ## Introduction to Exercism
 [Exercism.io](http://exercism.io/languages/python/about) is a really cool learning resource that has a selection of ready made code challenges with included tests that we will use occasionally during our course. We will only use the code challenges in Exercism when they apply directly to what we're learning but will follow a similar format for custom in class challenges.
