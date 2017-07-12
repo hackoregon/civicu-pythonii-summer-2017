@@ -16,13 +16,13 @@ class TestNamesFunc(unittest.TestCase):
         self.assertNotEqual(type(names_func), None)
 
     def test_names_func_returns_correct_list_of_lists(self):
-        test_list = range(10)
+        test_list = list(range(10))
         output = names_func(test_list, 2)
         # output should have a list of lists with 5 inner lists
         self.assertEqual(len(output), 5)
 
     def test_names_func_returns_correct_list_when_names_not_evenly_divis(self):
-        test_list = range(11)
+        test_list = list(range(11))
         output = names_func(test_list, 2)
         # output should still have list of list with 5 inner lists
         self.assertEqual(len(output), 5)
@@ -32,7 +32,7 @@ class TestNamesFunc(unittest.TestCase):
         self.assertEqual(3 in item_check, True)
 
     def test_that_a_remaining_group_of_3_is_handled_properly(self):
-        test_list = range(18)
+        test_list = list(range(18))
         output = names_func(test_list, 5)
         # output should have 4 inner lists
         self.assertEqual(len(output), 4)
