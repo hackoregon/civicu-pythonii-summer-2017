@@ -1,44 +1,63 @@
 
-class Person:
-    species = 'homo_sapien'
-    energy = 0
-    satiety = 0
+class BaseClass:
 
-    def __init__(self, height, age, hair_color, food, hour_slept):
-        self.height = height
-        self.age = age
-        self.hair_color = hair_color
-        self.food = food
-        self.hour_slept = hour_slept
+    def __init__(self, first_name, last_name, email, question):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.question = question
 
-    def eat(self):
-        self.satiety += self.food
-        if self.satiety > 0.5:
-            return 'full'
-        else:
-            return 'still hungry'
-
-    def sleep(self):
-        self.energy += self.hour_slept
-        if self.energy < 8:
-            return 'still tired'
-        else:
-            return 'awake'
-
-    def __str__(self):
-        return 'is a person'
+    def ask_a_question(self):
+        return(self.question)
 
 
-class Infant(Person):
-    def __init__(self, height, age, hair_color, food, hour_slept):
-        super().__init__(height, age, hair_color)
+class Student(BaseClass):
 
+    def __init__(self, first_name, last_name, email, question, books_add, books_remove):
+        super().__init__(first_name, last_name, email, question)
+        self.books_dict = {}
+        self.books_add = books_add
+        self.books_remove = books_remove
+
+    def add_book(self):
+        for book in self.books_add:
+            if book in self.books_dict.keys():
+                self.books_dict[book] =+ 1
+            else:
+                self.books_dict[book] = 1
+        return(self.books_dict)
+
+    def remove_book(self):
+        for book in self.books_remove:
+            if self.books_dict[book] > 1:
+                self.books_dict[book] -= 1
+            else:
+                del self.books_dict[book]
+        return(self.books_dict)
+
+    def show_books(self):
+        return(self.books_dict.keys())
+
+
+class Teacher(BaseClass):
+    def __init__(self, first_name, last_name, email, question, student_list, size):
+        super().__init__(first_name, last_name, email, question)
+        self.student_list = student_list
+        self.size = size
+
+    def shuffle_class(self):
+
+        from group_challenge.names_challenge import names_func
+
+        output = names_func(self.student_list, self.size)
+        return output
 
 
 if __name__ == '__main__':
-    class_inst = Person(1, 1, 'red', 0.3, 8)
-    print(help(class_inst))
-    # print(Person.__dict__)
-    # print(class_inst.eat())
-    # print(class_inst.sleep())
-    # print(class_inst.__dict__)
+    student1 = Student('first', 'last', 'email','q', ['b1', 'b2', 'b3'],['b2'])
+    teacher1 = Teacher('first', 'last', 'email','q', list(range(18)), 5)
+    print(student1.ask_a_question())
+    print(student1.add_book())
+    print(student1.remove_book())
+    print(student1.show_books())
+    print(teacher1.shuffle_class())
