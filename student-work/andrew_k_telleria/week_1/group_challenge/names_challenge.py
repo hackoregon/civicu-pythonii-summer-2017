@@ -16,7 +16,7 @@ class Person:
         self.last_name = last_name
         self.email = email
 
-    def ask_a_question():
+    def ask_a_question(self):
         print('{} asked a question.'.format(self.first_name))
 
 
