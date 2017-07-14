@@ -26,16 +26,16 @@ class Student(Person):
         self.books_dict = books_dict
     books_dict = {}
 
-    def add_book(author, book_name):
+    def add_book(self, book_name, author):
         books_dict[book_name] = author
         return books_dict
 
-    def remove_book(book_name):
+    def remove_book(self, book_name):
         del books_dict[book_name]
         return books_dict
 
-    def show_books():
-        print(book_dict)
+    def show_books(self):
+        print(books_dict)
 
 
 
@@ -53,8 +53,14 @@ class Teacher(Person):
         return random_student_list
 
 student_list = ['Andrew', 'Nate', 'John', 'Katie', 'Gina', 'Megan', 'Trent']
+books_dict = {'Automate The Boring Stuff': 'Python II'}
 teacher1 = Teacher('Zak', 'Kent', 'zak@hackoregon.org', student_list)
+student1 = Student('Andrew', 'Telleria', 'atelleria08@gmail.com', books_dict)
 print(teacher1.shuffle_class(student_list, 2))
+print(student1.add_book('The Thing of Darkness', 'Harry Thompson'))
+print(student1.remove_book('The Thing of Darkness'))
+print(student1.show_books())
+
 
 
 if __name__ == '__main__':
