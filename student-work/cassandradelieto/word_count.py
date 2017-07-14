@@ -15,7 +15,6 @@ def word_count(sentence):
 print(word_count("whatcha whatcha want whatcha want"))
 
 #Second way to count a string using regex and dict
-
 import re
 
 dict = {}
