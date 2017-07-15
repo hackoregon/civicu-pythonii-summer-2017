@@ -7,7 +7,9 @@ Here are some links to Git tutorials and other resources that may help if you're
 * [List of GitHub recommened resources](https://help.github.com/articles/git-and-github-learning-resources/)
 
 ## Diagram of class's Git workflow
-![Diagram_of_class_git_workflow](./images/class_git.png)
+![Diagram_of_class_git_workflow](../images/class_git.png)
+
+The diagram above shows the normal workflow we will be using a class. Notice that it does not include the Git commands that you will be entering locally on your computer to add and commit changes. For a more detailed instructions see the cheat sheet below.
 
 ## Git cheat sheet
 The subsections points below cover many of the common commands that we will be using daily in class.
