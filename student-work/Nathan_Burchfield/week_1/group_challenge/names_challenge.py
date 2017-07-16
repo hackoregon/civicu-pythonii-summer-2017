@@ -14,7 +14,6 @@ def names_func(a_list, size):
     This func should take a list and size, break the list into lists of the
     size and return a list of lists.
     """
-    
     return None
 
 
