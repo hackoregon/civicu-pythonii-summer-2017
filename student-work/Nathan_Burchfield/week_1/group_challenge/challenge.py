@@ -23,8 +23,9 @@ class Teacher:
 
     def reading(self):
 
-        self = question = "Do you like to read?"
-        print(self)
+        question = self
+        question = "Do you like to read?"
+        print(question)
 
         answer = input("?")
         if answer == "yes":
@@ -58,17 +59,18 @@ class Book(Student):
         self.books = []
 
     def add_book(self, book):
-        self.books.append(book)
-        b = re.split(r"(\w+)", book)
+        self.books = book
+        b = re.split(r'[\s]\s*', book)
+        print(b)
 
         answer = input("Do you want to remove any books from your list yes or no >?")
         if answer == 'yes':
+            x = b[0]
+            a = b.remove(x)
             print(b)
-            f = b.pop(-2)
-            print(f)
-        else:
-            print(book)
 
+        else:
+            print(b)
 
 a = Teacher("Bil","Bob","bob@Gmail.com")
 a.info("Nathan","Bob","Nathan@gmail.com")
@@ -77,7 +79,7 @@ e = Student("Bob","Billy","bob@gmail.com")
 e.info("Bob","Billy","bob@gmail.com")
 e = Book("Bob","Billy","bob@gmail.com")
 e.reading()
-e.add_book("Shining Jaws ThePrince")
+e.add_book("Shining, Jaws, The-Prince")
 
 
 
