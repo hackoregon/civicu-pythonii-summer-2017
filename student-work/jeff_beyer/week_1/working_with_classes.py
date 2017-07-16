@@ -1,8 +1,12 @@
-
-class Myclass:
-    pass
-
-
+#An example of a class that makes bicycles
+class Bicycle:
+    def __init__(self, size, color, noise):
+        self.size = size
+        self.color = color
+        self.noise = noise
+        
+    def ring_bell(self):
+        return self.noise
 
 
 
@@ -11,5 +15,6 @@ class Myclass:
 
 
 if __name__ =='__main__':
-    class_inst = Myclass()
-    print(class_inst)
+    bike_1 = Bicycle(5, "red", "Blah")
+    print(bike_1.ring_bell())
+
