@@ -1,15 +1,25 @@
 import re
 
 
-class Teacher:
+class Person:
+
+    def __init__(self,first_name,last_name,email):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.books = []
+
+
+class Teacher(Person):
 
     """Represents the teachers."""
 
     def __init__(self, first_name, last_name, email):
+        super(Teacher, self).__init__(first_name, last_name, email)
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
-        self.books =[]
+        return
 
     def info(self,first_name,last_name,email):
         self.first_name = first_name
@@ -71,6 +81,7 @@ class Book(Student):
 
         else:
             print(b)
+
 
 a = Teacher("Bil","Bob","bob@Gmail.com")
 a.info("Nathan","Bob","Nathan@gmail.com")
