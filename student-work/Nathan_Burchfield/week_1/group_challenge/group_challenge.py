@@ -52,11 +52,11 @@ class Student(Person):
         print("%s has been taken out of " % book, end='')
         if book in self.book_collection:
             self.book_collection.remove(book)
-            print("%s's collection." % self.first_name)
+            print("%s's book collection." % self.first_name)
         else:
             print("This book is not in your collection\n :%s" % book)
 
-    def libary(self):
+    def show_book(self):
         print("%s's book collection:%s" % (self.first_name,self.book_collection))
 
     def info(self, email):
@@ -70,9 +70,10 @@ f = Teacher("Ted", "Donald", "TD@gmail.com")
 f.info("TD@gmail.com")
 s = Student("Bartholomew", "Smith", "BS@gmail.com", ['Atlas Shrugged', 'Cats Cradle', '1984'])
 s.info("BS@gmail.com")
-s.libary()
+s.show_book()
 s.add_book('Animal Farm')
-s.libary()
+s.show_book()
+s.remove_book('1984')
 
 
 

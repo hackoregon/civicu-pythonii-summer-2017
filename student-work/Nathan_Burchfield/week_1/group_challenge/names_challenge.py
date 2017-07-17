@@ -10,6 +10,15 @@ remaining add that name to another inner list.
 """
 
 def names_func(a_list, size):
+
+    student_list = [a_list[i:i+size] for i in range(0, len(a_list),size)]
+    if len(student_list[-1])== 1:
+        student_list[-2].append(student_list[-1][0])
+        student_list.pop()
+        return student_list
+
+    names_func("bob tom time too tack take week walk elk",2)
+
     """
     This func should take a list and size, break the list into lists of the
     size and return a list of lists.
