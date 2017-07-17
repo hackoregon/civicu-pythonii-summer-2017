@@ -1,4 +1,5 @@
 import re
+import random
 
 
 class Person:
@@ -22,12 +23,25 @@ class Teacher(Person):
 
     """Represents the teachers."""
 
-    def __init__(self, first_name, last_name, email):
+    def __init__(self, first_name, last_name, email, sudent_list):
         super().__init__(first_name, last_name, email)
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
-        
+        self.student_list = student_list
+
+    def shuffle_class(self,student_list, size):
+        random.shuffle(student_list)
+
+        random_student_list = [student_list[i:i + size] for i in range(0, len(student_list), size)]
+
+        if len(random_student_list[-1]) == 1:
+            random_student_list[-2].append(random_student_list[-1][0])
+
+            random_student_list.pop()
+
+        return random_student_list
+
     def info(self, email):
         super().info(email)
         if re.search('@.+', email).group():
@@ -42,22 +56,22 @@ class Student(Person):
 
     def __init__(self, first_name, last_name, email, book_collection):
         super().__init__(first_name,last_name,email)
-        self.book_collection = book_collection
+        self.book_collection = {}
 
-    def add_book(self,book):
-        print(f"Adding {book} to {self.first_name}'s book collection.")
-        self.book_collection.append(book)
+    def add_book(self,book,author):
+        print(f"Adding {book} {author}'s book to {self.first_name}'s book collection.")
+        self.book_collection[book] = author
 
-    def remove_book(self, book):
-        print(f"{book} has been taken out of the collection", end=' ')
-        if book in self.book_collection:
-            self.book_collection.remove(book)
+    def remove_book(self, book,author):
+        print(f"{book} by {author} has been taken out of the collection", end=' ')
+        if book in book_collection:
+            del[book]
             print(f"{self.first_name}'s book collection")
         else:
-            print(f"This book is not in {self.first_name}'s collection\n:{book}")
+            print(f"This book is not in {self.first_name}'s collection.{book}{author}")
 
     def show_book(self):
-        print(f"{self.first_name}'s book collection:{self.book_collection}")
+        print(f"{self.first_name}'s book collection:{book_collection}")
 
     def info(self, email):
         super().info(email)
@@ -66,17 +80,22 @@ class Student(Person):
         else:
             print("Email not valid")
 
-f = Teacher("Ted", "Donald", "TD@gmail.com")
+student_list = ['Andrew', 'Nate', 'John', 'Katie', 'Gina', 'Megan', 'Trent']
+f = Teacher("Ted", "Donald", "TD@gmail.com", student_list)
 f.info("TD@gmail.com")
-s = Student("Bartholomew", "Smith", "BS@gmail.com", ['Atlas Shrugged', 'Cats Cradle', '1984'])
+book_collection = {"Cat's Cradle", 'Kurt Vonnegut'}
+s = Student("Bartholomew", "Smith", "BS@gmail.com", book_collection)
 s.info("BS@gmail.com")
 s.show_book()
-s.add_book('Animal Farm')
-s.show_book()
-s.remove_book('1984')
+s.add_book('The Prince', 'Machiavelli')
+s.remove_book("Cat's Cradle", 'Kurt Vonnegut')
+print(f.shuffle_class(student_list, 2))
 
 
+if __name__ == '__main__':
 
+    # Any code here will run when you run the command: `python names_challenge.py`
 
+    pass
 
 
