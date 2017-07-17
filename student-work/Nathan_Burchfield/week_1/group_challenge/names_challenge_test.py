@@ -1,5 +1,5 @@
 import unittest
-from names_challenge import names_func 
+from group_challange import names_func
 
 
 class TestNamesFunc(unittest.TestCase):
