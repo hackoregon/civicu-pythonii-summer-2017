@@ -10,12 +10,12 @@ class Person:
     
     def info(self, email):
         if re.search('@.+', email).group():
-            print("%s's email is valid: %s." %(self.first_name,email))
+            print(f"{self.first_name}'s email: {email} is valid.")
         else:
             print("Email not valid")
 
     def questions(self, question):
-        print("This is the question: %s" % question)
+        print(f"This is the question:{question}")
 
 
 class Teacher(Person):
@@ -45,19 +45,19 @@ class Student(Person):
         self.book_collection = book_collection
 
     def add_book(self,book):
-        print("Adding %s to %s's book collection." % (book, self.first_name))
+        print(f"Adding {book} to {self.first_name}'s book collection.")
         self.book_collection.append(book)
 
     def remove_book(self, book):
-        print("%s has been taken out of " % book, end='')
+        print(f"{book} has been taken out of the collection", end=' ')
         if book in self.book_collection:
             self.book_collection.remove(book)
-            print("%s's book collection." % self.first_name)
+            print(f"{self.first_name}'s book collection")
         else:
-            print("This book is not in your collection\n :%s" % book)
+            print(f"This book is not in {self.first_name}'s collection\n:{book}")
 
     def show_book(self):
-        print("%s's book collection:%s" % (self.first_name,self.book_collection))
+        print(f"{self.first_name}'s book collection:{self.book_collection}")
 
     def info(self, email):
         super().info(email)
