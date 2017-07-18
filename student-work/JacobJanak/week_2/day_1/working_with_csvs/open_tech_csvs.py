@@ -4,50 +4,41 @@ import geo_distance
 def find_airports(city):
     with open("airports.csv") as file:
         reader = csv.reader(file)
-
-        header = next(reader)
-        print(header)
-
+        list = []
         for row in reader:
             if row[2] == city:
-                print(row)
-
-find_airports('New York')
+                list.append(row)
+        return list
 
 def distance(city1, city2):
-    with open("airports.csv") as file:
-        reader = csv.reader(file)
+    # Get lists of possible airports
+    city1airports = find_airports(city1)
+    city2airports = find_airports(city2)
 
-        for row in reader:
-            if row[2] == city1:
-                city1_lat = row[6]
-                city1_long = row[7]
-            elif row[2] == city2:
-                city2_lat = row[6]
-                city2_long = row[7]
+    # Make sure we actually got airports
+    if len(city1airports) == 0 or len(city2airports) == 0:
+        print("Couldn't find an airport for ya, bud.")
+        return
 
-        try:
-            city1_lat
-        except NameError:
-            print("Oops, couldn't find that city.")
-            return
+    # Create rows to write later
+    new_rows = []
+    for airport1 in city1airports:
+        for airport2 in city2airports:
+            city1_lat = float(airport1[6])
+            city1_long = float(airport1[7])
+            city2_lat = float(airport2[6])
+            city2_long = float(airport2[7])
 
-        try:
-            city2_lat
-        except NameError:
-            print("Oops, couldn't find that city.")
-            return
+            result = geo_distance.distance(city1_lat, city1_long, city2_lat, city2_long)
+            new_rows.append([city1, airport1[1], city2, airport2[1], result])
 
-        city1_lat = float(city1_lat)
-        city1_long = float(city1_long)
-        city2_lat = float(city2_lat)
-        city2_long = float(city2_long)
-
-        result = geo_distance.distance(city1_lat, city1_long, city2_lat, city2_long)
-        row = [city1, city2, result]
-
-    with open('result.csv', 'a') as file:
+    with open('result.csv', 'w') as file:
         writer = csv.writer(file)
-        writer.writerow(row)
 
-distance('Boston', 'Paris')
+        header = ['Departing City', 'Departing Airport', 'Arriving City', 'Arriving Airport', 'Distance (km)']
+        writer.writerow(header)
+
+        for row in new_rows:
+            writer.writerow(row)
+
+distance('New York', 'Paris')
