@@ -5,4 +5,17 @@
 # just please try to remember not to commit the csv files when you're saving 
 # your work. 
 
+import csv
 
+
+def print_airports(country):
+    with open('airports.csv') as air:
+        airports = csv.reader(air)
+        header = next(airports)
+        # print(header)
+        count = 0
+        for row in airports:
+            if row[3] == country:
+                print(row)
+                count += 1
+        print(count)
