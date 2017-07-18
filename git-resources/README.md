@@ -9,7 +9,7 @@ Here are some links to Git tutorials and other resources that may help if you're
 ## Diagram of class's Git workflow
 ![Diagram_of_class_git_workflow](../images/class_git.png)
 
-The diagram above shows the normal workflow we will be using a class. Notice that it does not include the Git commands that you will be entering locally on your computer to add and commit changes. For a more detailed instructions see the cheat sheet below.
+The diagram above shows the normal workflow we will be using a class. Notice that it does not include the Git commands that you will be entering locally on your computer to add and commit changes. For more detailed instructions see the cheat sheet below.
 
 ## Git cheat sheet
 The subsections points below cover many of the common commands that we will be using daily in class.
@@ -41,7 +41,7 @@ Once you've committed your changes, and pushed those changes to your remote repo
 
 
 ## Troubleshooting
-If you ever run into trouble with the instructions above make sure to read the messages that Git gives you, they're super well written and can often point you in the right direction. Also feel free to reach out on Slack for an extra hand. I'll include and update a list of common problems below as they happen throughout the class. If you run into any problem that isn't include here let me know and it will be added or submit a PR to add a change.
+If you ever run into trouble with the instructions above make sure to read the messages that Git gives you, they're super well written and can often point you in the right direction. Also feel free to reach out on Slack for an extra hand. I'll include and update a list of common problems below as they happen throughout the class. If you run into any problem that isn't included here let me know and it will be added or submitted as a PR (pull request) to add a change.
 * Permission denied when trying `git push origin master`
     * often this problem can happen if you're trying to commit code to the class repo directly and not your copy on GitHub
     * run `git remote -v` and make sure that the remote for your project is pointing to `<your_GitHub_name>/civicu-pythonii-summer-2017`
