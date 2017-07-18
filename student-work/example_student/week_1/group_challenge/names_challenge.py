@@ -1,3 +1,4 @@
+import collections, random
 """ 
 The goal of this challenge is to create a function that will take a list of 
 names and a bin size and then shuffle those names and return them in a 
@@ -14,8 +15,7 @@ def names_func(a_list, size):
     This func should take a list and size, break the list into lists of the
     size and return a list of lists.
     """
-    
-    return None
+    return 
 
 
 if __name__ == '__main__':
