@@ -35,8 +35,8 @@ def print_airport():
     lon = dict()
     # Open the airports.csv file to read lat and lon for each aiport (store 
     # airport ID as int as dict key
-    with open('airports.csv') as f:
-        reader = csv.reader(f)
+    with open('airports.csv') as fin:
+        reader = csv.reader(fin)
         header = next(reader)
 
         # Latitude is index 6, longitude is index 7
@@ -44,10 +44,10 @@ def print_airport():
             lat[int(row[0])] = float(row[6])
             lon[int(row[0])] = float(row[7])
 
-    # Now open the dists.txt file for writiing out the distance calculations
+    # Now open the dists.txt file for writing out the distance calculations
     with open('dists.txt', 'w', newline='') as fout:
         writer = csv.writer(fout)
-        # Write a heade rline
+        # Write a header line
         writer.writerow(('Start-Airport-ID','End-Airport-ID','Distance'))
         # Open the routes.csv to see what distances to calculate
         with open('routes.csv') as f:
@@ -73,7 +73,7 @@ def print_airport():
                     continue
                 # write out the start_id, end_id and distance
                 writer.writerow((f'{start_id}', f'{end_id}',f'{dist}'))
-                print(dist)
+                
 
                 
 print_airport()
