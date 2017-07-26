@@ -13,8 +13,8 @@ for year in range(2008,2018):
     response = requests.get(url)
     # If we have any non-200s
     if response.status_code != 200:
-        print(f'Unexpected response code {response.status_code} for year' 
-            '{year}')
+        print(f'Unexpected response code {response.status_code} for year ' 
+            f'{year}')
     # Initialize our count for this year (resets each loop)
     this_year_count = 0
     # Loop over the response json and pull the count value (pull 0 by default)
