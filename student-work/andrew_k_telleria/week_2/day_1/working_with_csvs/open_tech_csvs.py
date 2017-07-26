@@ -44,7 +44,7 @@ def calc_airport_distances():
         for row in route_reader:
             source_id = row[3]
             dest_id = row[5]
-            print(row)
+            # print(row)
             if row[7] == 'Y':
                 stops == True
             
@@ -62,9 +62,9 @@ def calc_airport_distances():
                                                 dest_long)
 
                 with open("dist_info.csv", "a") as dist_info:
-                    # dist_info_writer = csv.writer(dist_info)
-                    # dist_info_writer.writerow([source_id, dest_id, km_dist, stops])
-                    pass
+                    dist_info_writer = csv.writer(dist_info)
+                    dist_info_writer.writerow([source_id, dest_id, km_dist, stops])
+                    
                 
 
 
