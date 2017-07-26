@@ -1,26 +1,18 @@
 # Class syllabus Python II
 
+## Teachers
 
-
-## Teacher: Hobson Lane
-
-* Zak Kent
-* Mark
-
-* Email: hobsonlane@gmail.com
+* Zak Kent: [zak.kent@gmail.com](mailto:zak.kent@gmail.com)
+* Hobson Lane: [hobsonlane@gmail.com](mailto:hobsonlane@gmail.com)
+* Mark Wheeler: [wheelerma55@gmail.com](mailto:wheelerma55@gmail.com)
 
 ## GitHub: http://github.com/hobson
 
 Welcome to the Civic U Python II class!
 
-We’re super excited that you’re able to take time out
-of your busy schedule and learn with us. The following document is a
-guide to what we will be learning throughout the session. We will do our
-best to adhere to this schedule but ask that you be flexible if we need
-to change the pacing of some lessons based on the speed in which the
-group can complete them.
-
-
+We’re super excited that you’re able to take time out of your busy schedule to learn Python with us.
+This is a guide to what we will be learning throughout the session.
+We will do our best to adhere to this schedule but ask that you be flexible if we need to change the pacing of some lessons based on the speed in which the group can complete them.
 
 ## Course description: 
 
@@ -31,8 +23,6 @@ Sharing the data we collect will primarily be accomplished using the Django REST
 The DRF is a super useful tool for building APIs quickly and comes with tons of extra functionality to make our lives easier.
 Above all we will be writing code and tests every day that we’re in class and will strive to have a good mix of hands on activities and meaningful
 lectures that give real world context to what we’re learning.
-
-
 
 ## Preparation for class:
 
