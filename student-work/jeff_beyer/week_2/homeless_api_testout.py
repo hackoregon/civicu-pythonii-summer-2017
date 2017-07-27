@@ -6,8 +6,8 @@ yearly_count = dict()
 # Request data for the years 2008 - 2017
 for year in range(2008, 2018):
     # Generate the url
-    url = ('http://service.civicpdx.org/homeless/ethnicity/?format=json&page=1&' 
-           + f'year={year}')
+    url = ('http://service.civicpdx.org/homeless/ethnicity/' +
+           f'?format=json&page=1&year={year}')
     # Submit our request to the API
     response = requests.get(url)
     # If we have any non-200s
