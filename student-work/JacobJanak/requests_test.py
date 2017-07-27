@@ -8,8 +8,9 @@ def how_many_homeless():
         r = requests.get(url)
         data = json.loads(r.content.decode())
         if data:
-            total_count += data[0]['count']
+            for i in data:
+                total_count += i['count']
     return total_count
 
-print('{} total homeless people in Portland.'.format(how_many_homeless()))
+print('{} total homeless people in Portland over the years'.format(how_many_homeless()))
 
