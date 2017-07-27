@@ -2,3 +2,6 @@
 *.pyc
 *.csv
 .idea*
+*.tar.gz
+*.tgz
+.ipynb_checkpoints
