@@ -28,7 +28,7 @@ names and a bin size and then shuffle those names and return them in a
 list of lists where the length of the inner lists match the bin size. 
 
 For example calling the function with a list of names and size 2 should return 
-a list of lists where each inner list has 2 random names. If the the number
+a list of lists where each inner list has 2 random names. If the number
 of names provided doesn't divide evenly into the bin size and only one name is 
 remaining add that name to another inner list. 
 
