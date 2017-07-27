@@ -1,3 +1,7 @@
 .DS_Store
 *.pyc
 *.csv
+.idea*
+*.tar.gz
+*.tgz
+.ipynb_checkpoints
