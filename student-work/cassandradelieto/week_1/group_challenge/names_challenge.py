@@ -1,22 +1,49 @@
-""" 
-The goal of this challenge is to create a function that will take a list of 
-names and a bin size and then shuffle those names and return them in a 
-list of lists where the length of the inner lists matches the bin size. 
+import random
+import math
 
-For example calling the function with a list of names and the size of 2 should return 
-a list of lists where each inner list has 2 random names. If the the number
-of names provided doesn't divide evenly into the bin size and only one name is 
-remaining add that name to another inner list.
-"""
+class Person(self): #base class for shared characteristics amongst all classes.
+    def __init__(self, first_name, last_name, email):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+
+    #def ask_a_question(self): #I don't get what this is supposed to do?
+        #return(pass)
+
+class Student(Person):
+    def __init__(self, first_name, last_name, email, book, teacher):
+        self.book = book
+        self.teacher = teacher
+        self.books_dict = []
+
+    def add_book(self, book): #this method will add a book to the student's books_dict.
+        self.book.add(book)
+
+    def remove_book(self, book):
+        self.book.remove(book)
+
+    def show_books(self):
+        print(self.book)
+
+
+class Teacher(Person): #Student will inherit Teacher's methods so it will become a super().__init__
+    def __init__(self, first_name, last_name, email):
+        self.student_list = [] #creates a list of student names
+
+    def shuffle_class(self, list):
+
 
 def names_func(a_list, size):
     """
     This func should take a list and size, break the list into lists of the
     size and return a list of lists.
     """
-    
-    return None
 
+    a_list =
+
+    size =
+
+    return
 
 if __name__ == '__main__':
     # Any code here will run when you run the command: `python names_challenge.py`
