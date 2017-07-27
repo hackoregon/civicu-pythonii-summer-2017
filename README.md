@@ -42,13 +42,17 @@ Also, with a Multnomah county library card you’re able to get a free access to
 
 ### Your Editor and Linter (I like Sublime + Flake8)
 
+Set up your editor to highlight lint in your code when you save!
+
 1. [install sublime](https://www.sublimetext.com/3)
 2. [install package control](https://packagecontrol.io/installation)
 3. [`shift-ctrl-p` then `install` then `linter` then <enter> or <tab>](http://sublimelinter.readthedocs.io/en/latest/installation.html#installing-via-pc)
 4. [`pip install flake8`](https://github.com/SublimeLinter/SublimeLinter-flake8#linter-installation)
 5. [`shift-ctrl-p` then `install` then `linter-flake8` then `<enter>` or `<tab>`](https://github.com/SublimeLinter/SublimeLinter-flake8)
+6. find the settings for sublime-linter and adjust them to your taste
+7. 
 
-Set up your environment to lint your code before you push:
+Set up your environment to automatically lint your code with every push!
 
 ```bash
 $ cd ~/src/civicu-pythonii-summer-2017/
