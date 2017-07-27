@@ -1,5 +1,6 @@
 
 class Myclass:
+    """Do nothing"""
     pass
 
 
