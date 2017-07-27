@@ -9,6 +9,7 @@ PROJECT_NAME=$(basename $PWD)
 flake8_result=$(flake8 --config=$PROJECT_NAME/scripts/flake8.cfg .)
 if [ -z "$flake8_result" ]; then
     echo "flake8 passed"
+    exit 0
     # # future_verification_result=$(python ../copenhagen/travis/future_verification.py django)
     # if [ -z "$future_verification_result" ]; then
     #     echo "future_verification passed"
