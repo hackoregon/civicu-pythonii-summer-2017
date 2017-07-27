@@ -40,6 +40,29 @@ Also, with a Multnomah county library card you’re able to get a free access to
 
 [Optional course list](https://www.google.com/url?q=https://docs.google.com/document/d/1kRzzybmQOi_uw2-BWnxZtIEQ5ajo48G4X0WyQ8ByjPE/edit?usp%3Dsharing&sa=D&ust=1501107467507000&usg=AFQjCNEGgBLCbZJkV8e_y5hi5Q7vVHQ9OQ)
 
+### Your Editor and Linter (I like Sublime + Flake8)
+
+1. [install sublime](https://www.sublimetext.com/3)
+2. [install package control](https://packagecontrol.io/installation)
+3. [`shift-ctrl-p` then `install` then `linter` then <enter> or <tab>](http://sublimelinter.readthedocs.io/en/latest/installation.html#installing-via-pc)
+4. [`pip install flake8`](https://github.com/SublimeLinter/SublimeLinter-flake8#linter-installation)
+5. [`shift-ctrl-p` then `install` then `linter-flake8` then `<enter>` or `<tab>`](https://github.com/SublimeLinter/SublimeLinter-flake8)
+
+Set up your environment to lint your code before you push:
+
+```bash
+$ cd ~/src/civicu-pythonii-summer-2017/
+$ cp shared-resources/pre-commit .git/hooks/
+$ # ln -s shared-resources/pre-commit .git/hooks/pre-commit
+$ cp shared-resources/flake8.cfg .git/hooks/
+$ # ln -s shared-resources/flake8.cfg .git/hooks/flake8.cfg
+$ cp shared-resources/delint_working_dir .git/hooks/
+$ # ln -s shared-resources/delint_working_dir .git/hooks/delint_workin_dir
+$ git commit -am 'force flake8 linting'
+$ git push
+```
+
+
 ## Syllabus
 
 Below you’ll find an outline of the topics we’ll be studying in class week by week.
