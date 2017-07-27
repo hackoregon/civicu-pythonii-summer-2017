@@ -1,10 +1,10 @@
 # Weekly Class Homework for Python II
 
-## Teachers
+## Resources
 
-* Zak Kent: [zak.kent@gmail.com](mailto:zak.kent@gmail.com)
-* Hobson Lane: [hobsonlane@gmail.com](mailto:hobsonlane@gmail.com)
-* Mark Wheeler: [wheelerma55@gmail.com](mailto:wheelerma55@gmail.com)
+* Python Virtual Env: [Virtual Environments](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/)
+* Python Virtualenvwrapper: [Virtual Environments](https://virtualenvwrapper.readthedocs.io/en/latest/)
+* Anaconda Virtual Env: [Conda Virtual Environments](https://conda.io/docs/using/envs.html)
+
 
 ## GitHub: http://github.com/hobson
-
