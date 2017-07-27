@@ -59,7 +59,7 @@ def route_reader(loc_dict):
 
 
 def write_dist(dist_csv, dist_data):
-    with open( dist_csv, "w") as csv_file:
+    with open(dist_csv, "w") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
         for line in dist_data:
             writer.writerow([s for s in line])
