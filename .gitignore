@@ -1,4 +1,10 @@
 .DS_Store
 *.pyc
 *.csv
+<<<<<<< HEAD
 env/
+=======
+*.tar.gz
+*.tgz
+.ipynb_checkpoints
+>>>>>>> 3945aad6bc105ca44112db28214a5ac20734e46c
