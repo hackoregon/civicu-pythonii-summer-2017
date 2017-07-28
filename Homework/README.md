@@ -9,17 +9,17 @@
 
 ## Homework description: 
 
-This past week we spent sometime working with virtual environments. Virtual environments refer to many
-technologies but our focus was on the Python based "virtualenv". The creation of python based virtual 
-environments allow you to install the various packages you need to complete the job and helps deal and
-manage package dependencies and conflicts. This weeks homework assignment will help to demonstrate how 
-this works and will help to increase your fluency with virtual environment concepts.
+This past week we spent sometime working with virtual environments. The term Virtual Environments refers to many
+types of technologies but our focus this week was on the Python based "virtualenv". The creation of python based virtual 
+environments allow you to install various packages needed to complete a specific job, helps manage package dependencies,
+and reduces system conflicts. This weeks homework assignment will demonstrate how this works and help to increase 
+your fluency with virtual environment concepts.
 
 
 ## Homework objectives:
   
 1. Install or confirm the installation of a python based virtual environment.
-   (For those of you using Anaconda refer to material specific to your implementation)
+   (For those of you using Anaconda refer to material and commands specific to your implementation)
    
 2. Confirm version of virtaulenv package.
 
@@ -30,6 +30,13 @@ this works and will help to increase your fluency with virtual environment conce
 5. Create virtual environment <venv-3> installed w/ Python 2.7x , activate, install pandas
 
 6. For each environment show the installed python packages
+
+7. Remove all traces of a single virtual environment
+
+8. Find a virtual environment cheat sheet you like and share something you learned.
+
+Optional: Research additional virtual environment functionality through packages like 
+virtualwrapper and Anaconda
 
 (hint: Becareful not to nest your environments)
 
