@@ -19,6 +19,7 @@ your fluency with virtual environment concepts.
 ## Homework objectives:
   
 1. Install or confirm the installation of a python based virtual environment.
+
    (For those of you using Anaconda refer to material and commands specific to your implementation)
    
 2. Confirm version of virtaulenv package.
