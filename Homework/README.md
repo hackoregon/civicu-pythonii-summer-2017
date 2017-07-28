@@ -9,9 +9,9 @@
 
 ## Homework description: 
 
-This past week we spent sometime working with virtual environments. The term Virtual Environments refers to many
+This past week we spent some time working with virtual environments. The term Virtual Environments refers to many
 types of technologies but our focus this week was on the Python based "virtualenv". The creation of python based virtual 
-environments allow you to install various packages needed to complete a specific job, helps manage package dependencies,
+environments allow you to install various packages needed to complete a specific job, helps manage package dependency,
 and reduces system conflicts. This weeks homework assignment will demonstrate how this works and help to increase 
 your fluency with virtual environment concepts.
 
@@ -38,6 +38,6 @@ your fluency with virtual environment concepts.
 Optional: Research additional virtual environment functionality through packages like 
 virtualwrapper and Anaconda
 
-(hint: Becareful not to nest your environments)
+(hint: Be careful not to nest your environments)
 
 Target date for review: Monday, 07-31-17
