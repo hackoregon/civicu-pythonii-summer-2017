@@ -1,0 +1,28 @@
+# *CHALLENGE*: Count the Homeless in Portland
+
+Here's a start at a loop that "exercises" the civicu API.
+
+```python
+import json
+import requests
+
+for i in range(2000, 2015):
+    url = 'http://service.civicpdx.org/homeless/ethnicity/?format=json&page=1&year={}'.format(i)
+    print(url)
+    r = requests.get(url)
+    print(r.status_code)
+    print(json.dump(json.loads(r.content.decode()), indent=2))
+```
+
+1) load the json from a civicpdx.org response into a list or dictionary
+2) extract an integer from it for the "count" of homeless people in a shelter for each year in your loop,
+3) sum up all those counts for all the years in civicpdx
+
+If you want extra credit make sure you haven't missed any homeless people.
+
+If you want extra double-secret credit make sure you haven't double-counted any any homeless people.
+
+which years did we do the homeless survey in Portland?
+
+Do you notice any trends or patterns?
+

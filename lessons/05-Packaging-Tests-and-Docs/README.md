@@ -17,7 +17,7 @@
 - Name one `putup` option and what it does
 - Name one folder or file that `putup` creates
 - Name files that `putup --with-django` creates
-- `django-admin startapp`?
+- `django-admin startapp`? [RTD](https://docs.djangoproject.com/en/1.11/intro/tutorial01/)
 - `django-admin startproject`?
 - What is the e-mail address associated with your git commits?
 - What is the e-mail address associated with your githib profile?
@@ -51,11 +51,137 @@
 - What goes in the `build/` dir?
 - Can I delete it?
 
+#### setup.py and setup.cfg
+
+```bash
+$ python setup.py --help
+Common commands: (see '--help-commands' for more)
+
+  setup.py build      will build the package underneath 'build/'
+  setup.py install    will install the package
+
+Global options:
+  --verbose (-v)      run verbosely (default)
+  --quiet (-q)        run quietly (turns verbosity off)
+  --dry-run (-n)      don't actually do anything
+  --help (-h)         show detailed help message
+  --no-user-cfg       ignore pydistutils.cfg in your home directory
+  --command-packages  list of packages that provide distutils commands
+
+Information display options (just display information, ignore any commands)
+  --help-commands     list all available commands
+  --name              print package name
+  --version (-V)      print package version
+  --fullname          print <package name>-<version>
+  --author            print the author's name
+  --author-email      print the author's email address
+  --maintainer        print the maintainer's name
+  --maintainer-email  print the maintainer's email address
+  --contact           print the maintainer's name if known, else the author's
+  --contact-email     print the maintainer's email address if known, else the
+                      author's
+  --url               print the URL for this package
+  --license           print the license of the package
+  --licence           alias for --license
+  --description       print the package description
+  --long-description  print the long package description
+  --platforms         print the list of platforms
+  --classifiers       print the list of classifiers
+  --keywords          print the list of keywords
+  --provides          print the list of packages/modules provided
+  --requires          print the list of packages/modules required
+  --obsoletes         print the list of packages/modules made obsolete
+
+usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+   or: setup.py --help [cmd1 cmd2 ...]
+   or: setup.py --help-commands
+   or: setup.py cmd --help
+```
+
+```bash
+$ python setup.py --help-commands
+Standard commands:
+  build             build everything needed to install
+  build_py          "build" pure Python modules (copy to build directory)
+  build_ext         build C/C++ extensions (compile/link to build directory)
+  build_clib        build C/C++ libraries used by Python extensions
+  build_scripts     "build" scripts (copy and fixup #! line)
+  clean             clean up temporary files from 'build' command
+  install           install everything from build directory
+  install_lib       install all Python modules (extensions and pure Python)
+  install_headers   install C/C++ header files
+  install_scripts   install scripts (Python or otherwise)
+  install_data      install data files
+  sdist             create a source distribution (tarball, zip file, etc.)
+  register          register the distribution with the Python package index
+  bdist             create a built (binary) distribution
+  bdist_dumb        create a "dumb" built distribution
+  bdist_rpm         create an RPM distribution
+  bdist_wininst     create an executable installer for MS Windows
+  check             perform some checks on the package
+  upload            upload binary package to PyPI
+
+Extra commands:
+  rotate            delete older distributions, keeping N newest files
+  install_egg_info  Install an .egg-info directory for the package
+  easy_install      Find/get/install Python packages
+  develop           install package in 'development mode'
+  rpm_version       Output the rpm *compatible* version string of this package
+  bdist_egg         create an "egg" distribution
+  saveopts          save supplied options to setup.cfg or other config file
+  setopt            set an option in setup.cfg or another config file
+  bdist_wheel       create a wheel distribution
+  alias             define a shortcut to invoke one or more commands
+  upload_docs       Upload documentation to PyPI
+  egg_info          create a distribution's .egg-info directory
+  doctest           (no description available)
+  test              run unit tests after in-place build
+
+usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+   or: setup.py --help [cmd1 cmd2 ...]
+   or: setup.py --help-commands
+   or: setup.py cmd --help
+```
+
+#### Releasing a Package
+
+```
+$ git tag -a 0.0.1 -m 'Release of version 0.0.1 does awesome new stuff!'
+$ git push --tag
+$ python setup.py build sdist bdist --universal
+$ pip install twine
+$ twine upload build/*.tgz
+```
+
+
+#### Installing
+
+A python package can be installed from a source code path, or .tar.gz or .tgz (tar and gzip bundle) file (which is a wheel). And it can automatically find that wheel if it's registered with pypi and uploaded.
+
+```bash
+$ pip install -e path/to/your/python_package/
+
+$ sudo pip install -e path/to/your/python_package/
+
+$ pip install python_package
+
+$ cd python_package
+$ python setup.py install
+
+$ cd python_package
+$ python setup.py build
+$ python 
+
+```
+
+_PyScaffold_ makes it easy to create and install a command line app (like grep or ls or django-admin) with a python package.
+Look in `setup.cfg` for a skeleton command line app and the example `skeleton.py` file.
+
 ### Docs
 
 - What are docstrings?
 	- What do RST docstrings look like?
-	- What do markdown or [Google-style docstrings](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) look like?
+	- What do Google-style docstrings look like? [RTD](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
 	- Which do you prefer?
 - Can docstrings produce docs?
 - What is Sphinx?
