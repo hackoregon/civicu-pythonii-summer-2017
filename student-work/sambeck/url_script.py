@@ -39,7 +39,7 @@ def show_data_by(data, key):
             # e[key] is which subcategory
             count_by_type[year][e[key]] += e['count']
             people += e['count']
-        
+
         print('year={}, #bins={}, people={}'.format(year,
                                                     len(data[year]),
                                                     people))
