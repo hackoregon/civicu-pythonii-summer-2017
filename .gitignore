@@ -54,3 +54,6 @@ MANIFEST
 
 # Jupyter notebook cache
 .ipynb_checkpoints
+
+# temporary work
+tmp/
