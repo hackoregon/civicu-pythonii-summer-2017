@@ -10,7 +10,7 @@
 
 ## Review
 
-- What does an HTTP GET request URL look like?
+- What does an HTTP GET request URL (with query parameters) look like?
 - What is PyScaffold?
 - Are there alternatives?
 - What does `putup` do
@@ -32,7 +32,7 @@
 Let's make sure you have a virtualenv you can use for your app and you can switch to it easily to start work whenever inspiration hits.
 
 ```bash
-mk virtualenv civicu_app
+mkvirtualenv civicu_app
 nano ~/.virtualenvs/civicu_app/.project
 workon civicu_app
 pip install Pillow
@@ -42,8 +42,17 @@ pip install Pillow
 
 ### Python Packages
 
-- What is a python module?
-- What is a python package?
+Q. What is a python module?
+A. any `.py` file
+A. you can `import package_name.module_name` (without the `.py`)
+A. you can `from package_name import module_name` 
+A. you can also import it "directly" if your current working directory (`.`) is in the $PYTHON_PATH and are in it's package dir
+
+Q. What is a python package?
+A. any directory with a `__init__.py` file in it
+A. If the package is installed you can 1
+
+
 - Where does `import` look for packages and modules?
 - What is the difference between a relative and absolut import?
 - Can I import from the current working directory in ipython?
@@ -69,38 +78,6 @@ Common commands: (see '--help-commands' for more)
 
   setup.py build      will build the package underneath 'build/'
   setup.py install    will install the package
-
-Global options:
-  --verbose (-v)      run verbosely (default)
-  --quiet (-q)        run quietly (turns verbosity off)
-  --dry-run (-n)      don't actually do anything
-  --help (-h)         show detailed help message
-  --no-user-cfg       ignore pydistutils.cfg in your home directory
-  --command-packages  list of packages that provide distutils commands
-
-Information display options (just display information, ignore any commands)
-  --help-commands     list all available commands
-  --name              print package name
-  --version (-V)      print package version
-  --fullname          print <package name>-<version>
-  --author            print the author's name
-  --author-email      print the author's email address
-  --maintainer        print the maintainer's name
-  --maintainer-email  print the maintainer's email address
-  --contact           print the maintainer's name if known, else the author's
-  --contact-email     print the maintainer's email address if known, else the
-                      author's
-  --url               print the URL for this package
-  --license           print the license of the package
-  --licence           alias for --license
-  --description       print the package description
-  --long-description  print the long package description
-  --platforms         print the list of platforms
-  --classifiers       print the list of classifiers
-  --keywords          print the list of keywords
-  --provides          print the list of packages/modules provided
-  --requires          print the list of packages/modules required
-  --obsoletes         print the list of packages/modules made obsolete
 
 usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
    or: setup.py --help [cmd1 cmd2 ...]
@@ -173,7 +150,7 @@ DB schema languages, like SQL, CASE, and even UML (universal modeling language),
 
 ##### Example Declarative Languages
 
-- Puppet Lang (ruby+)
+- Puppet Lang (ruby-ish)
 - Ansible *.yml files
 - INI/config files
 - SQL (sort-of)
@@ -197,7 +174,7 @@ config.read('FILE.INI')
 print(config['DEFAULT']['path'])
 ```
 
-Unlike json, I haven't found a way to convert a config object into a `list` or `dict` except by usinge the `__dict__` attribute.
+Unlike json, I haven't found a way to convert a config object into a `list` or `dict` except by using the `__dict__` attribute.
 
 To update a 'path' configuration parameter in the _DEFAULT_ section of your `config` you would do something like...
 
@@ -219,7 +196,7 @@ $ git push --tag
 $ python setup.py sdist bdist_wheel --universal upload  # INSECURE!!!
 ```
 
-But that would send a GET and POST requests to *http://*pypi.python.org rather than *https://*! So your packets could be intercepted by the router, or if you're on an unencrypted WiFi connection, anyone on the same WIFI connection!  I'm not sure how hard it is to intercept and decrypt your packets on a password-protected encrypted WiFi network (e.g. WPA2 connection), but better safe than sorry, *especially* if you use the same password at _pypi_ as elsewhere.
+The upload command above would send a GET and POST requests to *http://*pypi.python.org rather than *https://*! So your packets could be intercepted by the router, or if you're on an unencrypted WiFi connection, anyone on the same WIFI connection!  I'm not sure how hard it is to intercept and decrypt your packets on a password-protected encrypted WiFi network (e.g. WPA2 connection), but better safe than sorry, *especially* if you use the same password at _pypi_ as elsewhere.
 
 ```bash
 $ pip install twine
