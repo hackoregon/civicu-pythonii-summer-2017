@@ -88,6 +88,10 @@ True
 >>> hist -o -p
 ```
 
+also
+
+`git status --ignored`
+
 ## My Answer to the Challenge
 
 First I noticed that my environment wasn't correcting my syntax and style errors, so I installed a new linter.
