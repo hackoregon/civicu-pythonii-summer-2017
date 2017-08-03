@@ -1,4 +1,6 @@
-# Your First Django App
+# Leson 6: Your First Django App
+
+## Review
 
 OK, we've learned a lot over the past few days.
 
@@ -12,6 +14,92 @@ We know how to ...
 - gather up all our installed packages into a virtualenv
 - we know how to write docstrings (later we'll learn how to turn those into docs)
 - we know how to write and run tests
+
+## Errata
+
+- An HTTP GET request only requires a path, not necessarily query parameters like `?page=1`
+- Only an API request (usually a REST request) requires query parameters with `?` and `=` symbols
+- When I finally installed a linter in my fresh sublime install, it flagged my poor use of == True
+- Watch out for NaNs too, they're even more mysterious
+
+Here's the `==` vs `is` confusion. But it makes logical sense, if you think hard about it, because of the "readability" of python and what the meaning of the word "is" is ;)
+
+```python
+>>> None is False
+False
+>>> None == False
+False
+>>> 0 == False
+True
+>>> 0 is False
+False
+>>> hist -o -p
+```
+
+Here's some even more confusing properties about NaN's. This is because Python (and most other languages) comply with IEEE floating point math, which includes rules for handling NaNs and +INFs and -INFs.
+
+```python
+>>> np.nan == float('nan')
+False
+>>> np.nan is float('nan')
+False
+>>> float('nan')
+nan
+>>> np.nan
+nan
+>>> np.nan > 0
+False
+>>> np.nan <= 0
+False
+>>> np.nan == 0
+False
+>>> np.nan != 0
+True
+>>> np.nan != np.nan
+True
+>>> np.nan != float('nan')
+True
+>>> np.nan == np.nan
+False
+>>> np.nan != np.nan
+True
+>>> float('nan') != float('nan')
+True
+>>> float('nan') == float('nan')
+False
+```
+
+So a `nan` is not equal to or greater than or less than anything, not even itself.
+That's because a `nan` is not a number, not a value, not anything that can be equal to or greater than any other value or number.
+
+What about `inf`inity?
+
+```python
+>>> np.inf > 0
+True
+>>> np.inf > np.nan
+False
+>>> np.inf < np.nan
+False
+>>> np.inf <= np.nan
+False
+>>> np.inf != np.nan
+True
+>>> hist -o -p
+```
+
+## My Answer to the Challenge
+
+First I noticed that my environment wasn't correcting my syntax and style errors, so I installed a new linter.
+And it turns out there's a much better plugin for *Sublime Text 3* than flake8!!!
+Unfortunately it's called *Anaconda*, but it's different from the `conda` package manager that you're used to on Windows.
+
+I've corrected the tests to use `is` rather than `==` as a result of the linter nags.
+
+And I'm adding some git hooks to stop me from editing files in the build and egg directories and cluttering up my global `find` or `ctrl-p` in *Sublime*.
+
+
+
 
 ## The Official Django Tutorial
 
