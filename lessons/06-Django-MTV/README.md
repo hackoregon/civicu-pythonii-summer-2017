@@ -98,8 +98,9 @@ I've corrected the tests to use `is` rather than `==` as a result of the linter 
 
 And I'm adding some git hooks to stop me from editing files in the build and egg directories and cluttering up my global `find` or `ctrl-p` in *Sublime*.
 
+## *Retro*spective
 
-
+Let's pair up when we have bugs to fix so we can parallelize the fixing of them. ;)
 
 ## The Official Django Tutorial
 
