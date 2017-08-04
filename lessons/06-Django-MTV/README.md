@@ -90,7 +90,26 @@ True
 
 also
 
-`git status --ignored`
+```bash
+$ git status --ignored
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+  modified:   lessons/06-Django-MTV/README.md
+
+Ignored files:
+  (use "git add -f <file>..." to include in what will be committed)
+
+  .ipynb_checkpoints/
+  exercism-linux-64bit.tgz
+  homeless.csv
+  lessons/.ipynb_checkpoints/
+  lessons/03-HTTP-and-APIs/homeless.csv
+  lessons/shared-resources/flake8.cfg
+  lessons/shared-resources/food-carbon-footprint.csv
+```
 
 ## My Answer to the Challenge
 
@@ -164,13 +183,13 @@ Our package already contains the boilerplate for our app, we just need to fill i
 Make sure django is installed within your virtualenv
 
 ```bash
-$ source ~/.virtualenvs/civicu_app_env/bin/activate
+$ source ~/.virtualenvs/labelerenv/bin/activate
 ```
 
 *OR*
 
 ```bash
-$ workon civicu_app_env
+$ workon labelerenv
 ```
 
 *THEN*
@@ -190,9 +209,9 @@ $ django-admin --version
 If you used putup to start your package, you should already have a manage.py file as well as settings.py and urls.py in your package directory somwhere.
 So you can skip that step in the Django tutorial.
 Just keep in mind that a Django project is kept within a Python package.
-When the tutorial talks about you naming the outer `mysite` folder anything you like, that's the folder I called "civicu_app."
+When the tutorial talks about you naming the outer `mysite` folder anything you like, that's the folder I called "labeler_site."
 That's the name I put in at the end of the `putup` command.
-And putup assumed that my Django project would have the same name, so there's an inner folder called "civicu_app" where the tutorial has it as `mysite`.
+And putup assumed that my Django project would have the same name, so there's an inner folder called "labeler_site" where the tutorial has it as `mysite`.
 
 ### `django-admin startapp`
 
@@ -200,13 +219,109 @@ Now we're going to add a Django app along side our Django project. Our Django pr
 A good Django app focuses on one thing and tries to do that one thing well.
 
 ```bash
-$ cd ~/src/civicu_app/
+$ cd ~/src/labeler_site/
 $ django-admin startapp labelgame
 ```
 
-## Model
+## `settings.py`
 
-## View
+If you're having trouble setting the TIMEZONE setting, check out this [blog post](https://tommikaikkonen.github.io/timezones/).
+Hint: search for "America" on that page and you may find a city name for a time zone that's the official `pytz` name for `PDT` or `PST`.
+Second hint: It's not `'Portland'` or `'PDX'` or `'PDT'` or `'PST'` ;)
 
-## Template
+Also, most settings should be single-quoted strings if you want to have beautiful code that is consistent with the style of some of the best python developers I know.
+They use single quotes for any string that is designed to be read by a machine, like settings and configuration parameters and dictionary keys. These strings would break something if they were off by a single character, even whitespace.
+That way you can use double-quotes to identify human-readable strings that are typically much longer and don't affect how your app runs, just what it displays to your user or developers exercising its internal or public APIs.
+This convention will make it really easy to search-replace all those double quotes with a `gettext()` function call if you ever want to localize your app (translate all those human-readable strings into another language).
 
+## `labelgame.models.py`
+
+My `models.py` looks something like this (in the database class Mark will show you how to "normalize" away that third `Model` to simplify this data schema):
+
+
+```python
+class Image(models.Model):
+    filepath = models.CharField("Path relative to BASE_PATH for the image file",
+                                max_length=512)
+    caption = models.CharField("Description of the image, where and when it was taken",
+                               max_length=512)
+    created_date = models.DateTimeField('Date photo was taken.')
+    file = models.FileField(upload_to='.')
+
+
+class UserLabel(models.Model):
+    # question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    name = models.CharField(max_length=128)
+    user = models.ForeignKey(User)
+
+
+class TotalVotes(models.Model):
+    name = models.CharField(max_length=128)
+    votes = models.IntegerField(default=0)
+```
+
+
+## `labelgame.forms.py`
+
+My form has just a single field for the user to select or input a file path, but be careful about the names of the args to the Form instantiation so that they match up with your models.py name for the `FileField`
+
+```python
+from django import forms
+
+
+class ImageUploadForm(forms.Form):
+    imagefile = forms.FileField(
+        label='Select an image file',
+    )
+```
+
+## `labelgame.views.py`
+
+I copy-pasted this from the `FileField` blog post above and then looked for any mentions of that "docfile" or other variables and strings used in the `forms.py` or `models.py` from the blog post.
+I replaced them with *my* version of those field names for the labelgame app.
+
+```python
+from .models import Image
+from .forms import ImageUploadForm
+
+
+def list(request):
+    # Handle imagefile upload
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            newimage = Image(file=request.FILES['imagefile'])
+            newimage.save()
+            # Redirect to the document list after POST
+            return HttpResponseRedirect(reverse('myproject.myapp.views.list'))
+    else:
+        form = ImageUploadForm()  # An empty, unbound form
+
+    # Load images for the list page
+    images = Image.objects.all()  # noqa
+
+    # Render list page with the images and the form
+    return render_to_response(
+        'myapp/list.html',
+        {'images': images, 'form': form},
+        context_instance=RequestContext(request)
+    )
+```
+
+Of course, I left the `index()` view from the original Django tutorial, so I can have a "home page" that works too. Eventually, I can add a link to the form there.
+
+Also, I replaced `documents` variable name and `Document` Model name with my `image` and `Image` names.
+Be careful about this.
+When you first try to run someone else's code (something you copy-pasted from a blog like this), make as few changes as possible to variable names.
+Run it first and see where it breaks and fix the names one at a time.
+And don't "fix" variable/class/function names if it works before the change!
+
+
+```python
+def index(request):
+    return HttpResponse("This the home page of the Wolf Labeler App.")
+```
+
+## `labelgame/templates/labelgame/*.html`
+
+This is where we'll put some `HTML` when we want to make this a prettier, funner game (or if we get tired of putting long, hard-coded `HTML` strings in our `views.py`).
