@@ -220,12 +220,21 @@ A good Django app focuses on one thing and tries to do that one thing well.
 
 ```bash
 $ cd ~/src/labeler_site/
-$ django-admin startapp labelgame
+$ django-admin startapp labeler
 ```
 
-## `settings.py`
+## Complete Parts 1 and 2
 
-If you're having trouble setting the TIMEZONE setting, check out this [blog post](https://tommikaikkonen.github.io/timezones/).
+Use the Django Tutorial to build a `polls` app.
+We'll modify the models below to support our new functionality.
+And the challenge assignment will be to add an image upload feature. 
+
+Follow the instructions in the tutorial exactly.
+You can change the names of the app and project, if you like, to reflect that we're building an image captioning and labeling app (much like an online photo album).
+
+### `settings.py`
+
+If you're having trouble setting the TIME_ZONE setting, check out this [blog post](https://tommikaikkonen.github.io/timezones/).
 Hint: search for "America" on that page and you may find a city name for a time zone that's the official `pytz` name for `PDT` or `PST`.
 Second hint: It's not `'Portland'` or `'PDX'` or `'PDT'` or `'PST'` ;)
 
@@ -234,94 +243,39 @@ They use single quotes for any string that is designed to be read by a machine, 
 That way you can use double-quotes to identify human-readable strings that are typically much longer and don't affect how your app runs, just what it displays to your user or developers exercising its internal or public APIs.
 This convention will make it really easy to search-replace all those double quotes with a `gettext()` function call if you ever want to localize your app (translate all those human-readable strings into another language).
 
-## `labelgame.models.py`
 
-My `models.py` looks something like this (in the database class Mark will show you how to "normalize" away that third `Model` to simplify this data schema):
+### `labeler.models.py`
+
+After you've successfully completed parts 1 and 2, and have a working application with `runserver` working, start adding these models (table schemas) to your models.py.
+
+My `models.py` is below.
+We'll have an `Image` model in place of the `Question` model for the Django tutorial `polls` app.
+Unlike the polls app, we don't want user votes to be anonymous.
+We need to store the `User.id` as a relationship (`ForeignKey`) from the `UserLabel` (votes) table to the `User` table.
+The `User` table is built into the Django `auth` app that is installed by default (can you find it in your `INSTALLED_APPS` setting?)
 
 
 ```python
+from django.contrib.auth.models import User
+
+
 class Image(models.Model):
-    filepath = models.CharField("Path relative to BASE_PATH for the image file",
-                                max_length=512)
+    """ A database record for uploaded images to be labeled """
     caption = models.CharField("Description of the image, where and when it was taken",
-                               max_length=512)
-    created_date = models.DateTimeField('Date photo was taken.')
-    file = models.FileField(upload_to='.')
+                               max_length=512, default=None, null=True)
+    uploaded_by = models.ForeignKey(User, default=None, null=True)
+    file = models.FileField("Select file to upload", upload_to='images')
 
 
 class UserLabel(models.Model):
-    # question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    """ Individual user labels (their filled out ballot, voting for a label for an image) """
     name = models.CharField(max_length=128)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, default=None, null=True)
 
 
 class TotalVotes(models.Model):
+    """ Aggregated votes (by all users, who are allowed to vote multiple times) for an individual Image """
+    image = models.ForeignKey(Image, default=None, null=True)
     name = models.CharField(max_length=128)
     votes = models.IntegerField(default=0)
 ```
-
-
-## `labelgame.forms.py`
-
-My form has just a single field for the user to select or input a file path, but be careful about the names of the args to the Form instantiation so that they match up with your models.py name for the `FileField`
-
-```python
-from django import forms
-
-
-class ImageUploadForm(forms.Form):
-    imagefile = forms.FileField(
-        label='Select an image file',
-    )
-```
-
-## `labelgame.views.py`
-
-I copy-pasted this from the `FileField` blog post above and then looked for any mentions of that "docfile" or other variables and strings used in the `forms.py` or `models.py` from the blog post.
-I replaced them with *my* version of those field names for the labelgame app.
-
-```python
-from .models import Image
-from .forms import ImageUploadForm
-
-
-def list(request):
-    # Handle imagefile upload
-    if request.method == 'POST':
-        form = ImageUploadForm(request.POST, request.FILES)
-        if form.is_valid():
-            newimage = Image(file=request.FILES['imagefile'])
-            newimage.save()
-            # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('myproject.myapp.views.list'))
-    else:
-        form = ImageUploadForm()  # An empty, unbound form
-
-    # Load images for the list page
-    images = Image.objects.all()  # noqa
-
-    # Render list page with the images and the form
-    return render_to_response(
-        'myapp/list.html',
-        {'images': images, 'form': form},
-        context_instance=RequestContext(request)
-    )
-```
-
-Of course, I left the `index()` view from the original Django tutorial, so I can have a "home page" that works too. Eventually, I can add a link to the form there.
-
-Also, I replaced `documents` variable name and `Document` Model name with my `image` and `Image` names.
-Be careful about this.
-When you first try to run someone else's code (something you copy-pasted from a blog like this), make as few changes as possible to variable names.
-Run it first and see where it breaks and fix the names one at a time.
-And don't "fix" variable/class/function names if it works before the change!
-
-
-```python
-def index(request):
-    return HttpResponse("This the home page of the Wolf Labeler App.")
-```
-
-## `labelgame/templates/labelgame/*.html`
-
-This is where we'll put some `HTML` when we want to make this a prettier, funner game (or if we get tired of putting long, hard-coded `HTML` strings in our `views.py`).
