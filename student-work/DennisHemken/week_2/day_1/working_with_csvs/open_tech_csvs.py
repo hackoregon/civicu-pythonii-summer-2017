@@ -26,6 +26,7 @@ def csv_airports():
         
         for row in airports_reader:
             print(row)
+            
     return
                            
 def csv_airports_from_country(country):
@@ -35,7 +36,7 @@ def csv_airports_from_country(country):
         header = next(airports_reader)
         
         for row in airports_reader:
-            if row(3) == country:
+            if str(row[3]) == country:
                 print(row)
                 
     return
