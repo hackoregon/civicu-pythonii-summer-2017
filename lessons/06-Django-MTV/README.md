@@ -90,7 +90,26 @@ True
 
 also
 
-`git status --ignored`
+```bash
+$ git status --ignored
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+  modified:   lessons/06-Django-MTV/README.md
+
+Ignored files:
+  (use "git add -f <file>..." to include in what will be committed)
+
+  .ipynb_checkpoints/
+  exercism-linux-64bit.tgz
+  homeless.csv
+  lessons/.ipynb_checkpoints/
+  lessons/03-HTTP-and-APIs/homeless.csv
+  lessons/shared-resources/flake8.cfg
+  lessons/shared-resources/food-carbon-footprint.csv
+```
 
 ## My Answer to the Challenge
 
@@ -164,13 +183,13 @@ Our package already contains the boilerplate for our app, we just need to fill i
 Make sure django is installed within your virtualenv
 
 ```bash
-$ source ~/.virtualenvs/civicu_app_env/bin/activate
+$ source ~/.virtualenvs/labelerenv/bin/activate
 ```
 
 *OR*
 
 ```bash
-$ workon civicu_app_env
+$ workon labelerenv
 ```
 
 *THEN*
@@ -190,9 +209,9 @@ $ django-admin --version
 If you used putup to start your package, you should already have a manage.py file as well as settings.py and urls.py in your package directory somwhere.
 So you can skip that step in the Django tutorial.
 Just keep in mind that a Django project is kept within a Python package.
-When the tutorial talks about you naming the outer `mysite` folder anything you like, that's the folder I called "civicu_app."
+When the tutorial talks about you naming the outer `mysite` folder anything you like, that's the folder I called "labeler_site."
 That's the name I put in at the end of the `putup` command.
-And putup assumed that my Django project would have the same name, so there's an inner folder called "civicu_app" where the tutorial has it as `mysite`.
+And putup assumed that my Django project would have the same name, so there's an inner folder called "labeler_site" where the tutorial has it as `mysite`.
 
 ### `django-admin startapp`
 
@@ -200,13 +219,63 @@ Now we're going to add a Django app along side our Django project. Our Django pr
 A good Django app focuses on one thing and tries to do that one thing well.
 
 ```bash
-$ cd ~/src/civicu_app/
-$ django-admin startapp labelgame
+$ cd ~/src/labeler_site/
+$ django-admin startapp labeler
 ```
 
-## Model
+## Complete Parts 1 and 2
 
-## View
+Use the Django Tutorial to build a `polls` app.
+We'll modify the models below to support our new functionality.
+And the challenge assignment will be to add an image upload feature. 
 
-## Template
+Follow the instructions in the tutorial exactly.
+You can change the names of the app and project, if you like, to reflect that we're building an image captioning and labeling app (much like an online photo album).
 
+### `settings.py`
+
+If you're having trouble setting the TIME_ZONE setting, check out this [blog post](https://tommikaikkonen.github.io/timezones/).
+Hint: search for "America" on that page and you may find a city name for a time zone that's the official `pytz` name for `PDT` or `PST`.
+Second hint: It's not `'Portland'` or `'PDX'` or `'PDT'` or `'PST'` ;)
+
+Also, most settings should be single-quoted strings if you want to have beautiful code that is consistent with the style of some of the best python developers I know.
+They use single quotes for any string that is designed to be read by a machine, like settings and configuration parameters and dictionary keys. These strings would break something if they were off by a single character, even whitespace.
+That way you can use double-quotes to identify human-readable strings that are typically much longer and don't affect how your app runs, just what it displays to your user or developers exercising its internal or public APIs.
+This convention will make it really easy to search-replace all those double quotes with a `gettext()` function call if you ever want to localize your app (translate all those human-readable strings into another language).
+
+
+### `labeler.models.py`
+
+After you've successfully completed parts 1 and 2, and have a working application with `runserver` working, start adding these models (table schemas) to your models.py.
+
+My `models.py` is below.
+We'll have an `Image` model in place of the `Question` model for the Django tutorial `polls` app.
+Unlike the polls app, we don't want user votes to be anonymous.
+We need to store the `User.id` as a relationship (`ForeignKey`) from the `UserLabel` (votes) table to the `User` table.
+The `User` table is built into the Django `auth` app that is installed by default (can you find it in your `INSTALLED_APPS` setting?)
+
+
+```python
+from django.contrib.auth.models import User
+
+
+class Image(models.Model):
+    """ A database record for uploaded images to be labeled """
+    caption = models.CharField("Description of the image, where and when it was taken",
+                               max_length=512, default=None, null=True)
+    uploaded_by = models.ForeignKey(User, default=None, null=True)
+    file = models.FileField("Select file to upload", upload_to='images')
+
+
+class UserLabel(models.Model):
+    """ Individual user labels (their filled out ballot, voting for a label for an image) """
+    name = models.CharField(max_length=128)
+    user = models.ForeignKey(User, default=None, null=True)
+
+
+class TotalVotes(models.Model):
+    """ Aggregated votes (by all users, who are allowed to vote multiple times) for an individual Image """
+    image = models.ForeignKey(Image, default=None, null=True)
+    name = models.CharField(max_length=128)
+    votes = models.IntegerField(default=0)
+```
