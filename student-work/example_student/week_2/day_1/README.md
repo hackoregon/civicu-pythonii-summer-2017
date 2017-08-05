@@ -54,7 +54,9 @@ times_three = [(num * 3) for num in list_nums]
 ### Set comprehensions
 
 ```Python
+
 word = 'mississippi'
+
 
 # building a set using a for loop
 unique_letters = set()
