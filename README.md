@@ -72,200 +72,47 @@ $ git push
 Below you’ll find an outline of the topics we’ll be studying in class week by week.
 If you have any questions or concerns beforehand feel free to contact me via our Slack channel or by email at [hobsonlane@gmail.com](hobsonlane@gmail.com) I look forward to getting to meet y’all, see you soon!
 
-+--------------------------------------+--------------------------------------+
-| ## Date         | ## Class focus  |
-+--------------------------------------+--------------------------------------+
-| 7/10         | - installation of   |
-|                                      | tools                         |
-|                                      |                                      |
-|                                      | - introduction to   |
-|                                      | class structure               |
-|                                      |                                      |
-|                                      | - git/unix          |
-|                                      | basics                        |
-|                                      |                                      |
-|                                      | - benchmark current |
-|                                      | level of Python knowledge     |
-|                                      |                                      |
-|                                      | - paired code       |
-|                                      | challenge (random group assignment   |
-|                                      | tool)                         |
-+--------------------------------------+--------------------------------------+
-| 7/12         | - review of Python  |
-|                                      | basics targeted from benchmark       |
-|                                      | survey                        |
-|                                      |                                      |
-|                                      | - intro into ways   |
-|                                      | to debug in Python and general       |
-|                                      | problem solving strategies    |
-|                                      |                                      |
-|                                      | - paired code       |
-|                                      | challenge                     |
-+--------------------------------------+--------------------------------------+
-| 7/17         | - list              |
-|                                      | comprehensions                |
-|                                      |                                      |
-|                                      | - lazy evaluation & |
-|                                      | generators                    |
-|                                      |                                      |
-|                                      | - using python to   |
-|                                      | clean and manipulate csv             |
-|                                      | files                         |
-|                                      |                                      |
-|                                      | - paired code       |
-|                                      | challenge (clean dirty data)  |
-+--------------------------------------+--------------------------------------+
-| 7/19         | - testing with      |
-|                                      | unittest                      |
-|                                      |                                      |
-|                                      | - tour of Django    |
-|                                      |                               |
-|                                      |                                      |
-|                                      | - manage.py command |
-|                                      | basics                        |
-|                                      |                                      |
-|                                      | - settings &        |
-|                                      | installing 3rd party tools    |
-|                                      |                                      |
-|                                      | - intro to          |
-|                                      | manage.py shell\_plus         |
-+--------------------------------------+--------------------------------------+
-| 7/24         | - testing with      |
-|                                      | unittest                      |
-|                                      |                                      |
-|                                      | - group code        |
-|                                      | challenge (unittest)          |
-|                                      |                                      |
-|                                      | - request/response  |
-|                                      | cycle and HTTP                |
-|                                      |                                      |
-|                                      | - explanation of    |
-|                                      | WSGI                          |
-+--------------------------------------+--------------------------------------+
-| 7/26         | - tour of           |
-|                                      | Django                        |
-|                                      |                                      |
-|                                      | - basic building    |
-|                                      | blocks of the DRF             |
-|                                      |                                      |
-|                                      | - paired code       |
-|                                      | challenge (build a basic             |
-|                                      | endpoint)                     |
-+--------------------------------------+--------------------------------------+
-| 7/31         | - filtering by      |
-|                                      | query params                  |
-|                                      |                                      |
-|                                      | - querysets and     |
-|                                      | filtersets                    |
-|                                      |                                      |
-|                                      | - testing API       |
-|                                      | endpoints                     |
-|                                      |                                      |
-|                                      | - paired code       |
-|                                      | challenge (adding filtering to       |
-|                                      | endpoints with tests)         |
-+--------------------------------------+--------------------------------------+
-| 8/2          | - running scripts   |
-|                                      | that have access to django models    |
-|                                      | outside of an app             |
-|                                      |                                      |
-|                                      | - workshop          |
-|                                      | (building a script that runs outside |
-|                                      | of Django but uses the ORM)   |
-|                                      |                                      |
-|                                      | - overriding        |
-|                                      | inherited methods, uses of           |
-|                                      | Super()                       |
-+--------------------------------------+--------------------------------------+
-| 8/7          | - decorators |
-|                                      |                                      |
-|                                      | - advanced testing  |
-|                                      | with mocks                    |
-|                                      |                                      |
-|                                      | - using testing     |
-|                                      | fixtures                      |
-|                                      |                                      |
-|                                      | - group challenge   |
-|                                      | creating mocks for tests      |
-|                                      |                                      |
-|                                      |              |
-+--------------------------------------+--------------------------------------+
-| 8/9          | - connecting to 3rd |
-|                                      | party APIs                    |
-|                                      |                                      |
-|                                      | - introduction to   |
-|                                      | scrapy and beautiful soup     |
-|                                      |                                      |
-|                                      | - gathering data    |
-|                                      | and adding it to Django       |
-|                                      |                                      |
-|                                      | - group challenge   |
-|                                      | (gather data and write it to         |
-|                                      | csv)                          |
-+--------------------------------------+--------------------------------------+
-| 8/14         | - 3rd party APIs    |
-|                                      | continued                     |
-|                                      |                                      |
-|                                      | - transformation of |
-|                                      | gathered data                 |
-|                                      |                                      |
-|                                      | - load the csv of   |
-|                                      | gathered data to Django       |
-|                                      |                                      |
-|                                      | - expose the loaded |
-|                                      | data through custom endpoints |
-+--------------------------------------+--------------------------------------+
-| 8/16         | - functional        |
-|                                      | programming                   |
-|                                      |                                      |
-|                                      | - bottom up         |
-|                                      | approach to problem solving   |
-|                                      |                                      |
-|                                      | - modeling          |
-|                                      | solutions on simple data             |
-|                                      | representation of problem     |
-|                                      |                                      |
-|                                      | - work on student   |
-|                                      | APIs                          |
-+--------------------------------------+--------------------------------------+
-| 8/21         | - functional        |
-|                                      | programming continued         |
-|                                      |                                      |
-|                                      | - mini group        |
-|                                      | project using functional stuff we’ve |
-|                                      | learned                       |
-|                                      |                                      |
-|                                      | - work on student   |
-|                                      | APIs                          |
-+--------------------------------------+--------------------------------------+
-| 8/23         | - deploying APIs    |
-|                                      |  (heroku)                     |
-|                                      |                                      |
-|                                      | - brief explanation |
-|                                      | of additional deployment             |
-|                                      | options                       |
-|                                      |                                      |
-|                                      | - working on        |
-|                                      | student projects              |
-+--------------------------------------+--------------------------------------+
-| 8/28         | - GraphQL and how   |
-|                                      | it can be added seamlessly to an     |
-|                                      | existing project              |
-|                                      |                                      |
-|                                      | - paired code       |
-|                                      | challenge (using GraphQL)     |
-|                                      |                                      |
-|                                      | - start building a  |
-|                                      | GraphQL server for our               |
-|                                      | projects                      |
-+--------------------------------------+--------------------------------------+
-| 8/30         | - GraphQL continued |
-|                                      |                               |
-|                                      |                                      |
-|                                      | - sharing student   |
-|                                      | projects                      |
-|                                      |                                      |
-|                                      | - open ended        |
-|                                      | session on topics that needed more   |
-|                                      | time                          |
-+--------------------------------------+--------------------------------------+
+### Here's the Original Syllabus
+
+Date     | Topics                                                                    | Challenge
+-------------------------------------------------------------------------------------------------
+Mon 7/10 | class structure, tools: bash, git, pair coding                            | exercism hello world
+Wed 7/12 | Python review, debugging, problem solving strategies                      | exercism for loop
+Mon 7/17 | list comprehentions, generators and lazy evaluation, cleaning csv files   | read & write csv
+Wed 7/19 | Django, `manage.py`, `settings.INTALLED_APPS`, `shell\_plus`              | `runserver` with hello world
+Mon 7/24 | WSGI, `unittest`, HTTP request/response cycle                             | sum PDX homeless count requests
+Wed 7/26 | Django Rest Framework (DRF)                                               | build an endpoint
+Mon 7/31 | Django `Model.objects.filter`, `querysets`, testing API endpoints         | filter your endpoint, test
+Wed 8/02 | use ORM (models.py) outside of django manage.py, `Super()`                | bot that modifes database
+Mon 8/07 | fixtures, mocks, and decorators for testing                               | create a fixture to test a django app
+Wed 8/09 | scraping (Beautiful Soup) and 3rd party APIs                              | download some tweets from twitter 
+Mon 8/14 | Scrapy bots to gather data                                                | Scrapy challenge
+Wed 8/16 | functional programming, bottom's up approach to problem solving           | improve student API
+Mon 8/21 | advanced functional programming                                           | improve student API
+Wed 8/23 | deployment (heroku)                                                       | deploy your django app
+Mon 8/28 | GraphQL                                                                   | Graph Query challenge
+Wed 8/30 | More GraphQL                                                              | Graph Query challenge
+
+
+### Updated Syllabus
+ 
+Date     | #  |Topics                                                                | Challenge
+-------------------------------------------------------------------------------------------------
+Mon 7/10 | 00 | class structure, tools: bash, git, pair coding                       | exercism hello world
+Wed 7/12 | 00 | Python review, debugging, problem solving strategies                 | exercism for loop
+Mon 7/17 | 01 | Python3, Showoff, Exercism, git, slack                               | exercism challenge
+Wed 7/19 | --                                                                        |
+Mon 7/24 | 03 | API clients using `requests` and URL hacking                         | sum PDX homeless counts
+Wed 7/26 | 04 | A django project: virtualenv, docs, tests                            | `putup` a django app and create a virtualenv
+Mon 7/31 | 05 | document, test, then code                                            | bot.py to respond to user greeting
+Wed 8/02 | 06 | Your first django app: image labeling game                           | enable user upload of an image
+Mon 8/07 | 07 | Django admin and Django Rest Framework (DRF)                         | build an endpoint
+Wed 8/09 | 08 | Django `Model.objects.filter`, `querysets`, postgresql               | filter your endpoint, test 
+Mon 8/14 | 09 | Using Pandas for data wrangling, PIL for image manipulation          | plot histogram of an image's pixels (spectrogram)
+Wed 8/16 | 10 | Dynamic programming (graph search)                                   | algorithm for least change problem
+Mon 8/21 | 11 | GraphQL
+Tue 8/22 | 12 | Makeup class
+Wed 8/23 | 13 | Functional programming
+Mon 8/28 | 14 | Continuous integration: Travis, Coveralls, CodeHealth, Insping
+Tue 8/29 | 15 | Makeup class
+Wed 8/30 | 16 | Final Exam
