@@ -11,12 +11,17 @@ class Student(BaseClass):
     def __init__(self, first_name, last_name, email, books_dict={}):
         super().__init__(first_name, last_name, email)
         self.books_dict = {}
+        #self.teacher = teacher
+        #teacher.add_student(self)
 
     def add_book(self, book_name, author):
         self.books_dict[book_name] = author
 
     def remove_book(self, book_name):
-        del self.books_dict[book_name]
+        try:
+            del self.books_dict[book_name]
+        except KeyError:
+            print("That book is not in the dictionary.")
 
     def show_books(self):
         print(self.books_dict)
