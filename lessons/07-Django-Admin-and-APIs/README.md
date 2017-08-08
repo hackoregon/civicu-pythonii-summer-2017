@@ -1,6 +1,16 @@
-# Your first Djnago App!
+# Your first Django API!
 
-Now we're going to take advantage of some magic built into Django.
+Now we're going to take advantage of some magic built into Django to build an "admin interface"
+
+## Review
+
+Demonstrate your implementation of a file upload form.
+
+Show how to add an list template view of the images.
+
+## Templates
+
+Add picture display to the list view.
 
 ## Django Admin Interface
 
@@ -75,6 +85,67 @@ So our endpoints (views) for this lesson are going to be:
 
 ### Let's Build It!
 
+#### Serializers
+
+Serializers turn a database table (or a set of records from a DB table) into a "serial" stream suitable for transmission over a serial interface (digital IO, serial port, USB, or Ethernet packet).
+
+Deserializers turn a serialized string of ascii characters into a database record (or python data structure).
+
+Can you think of any serializers or deserializers that we used during the class on HTTP GET requests where we downloaded data from a CivicU API?
+
+Can you think of any other serialization formats? (hint, you can visit the Civic U api for the homeless project to get at least one more kind)?
+
+Why do you think one format has become the most popular?
+
+How would you serialize 3 database records from our app?
+
+Isn't `print()` and `str()` a serializer?
+
+#### A Serializer for our Fields
+
+How would you serialize this data model (table)?
+
+```python
+class Image(models.Model):
+    caption = models.CharField("Description of the image, where and when it was taken",
+                               max_length=512, default=None, null=True)  # , required=False)
+    created_date = models.DateTimeField('Date photo was uploaded.', auto_now_add=True)
+    uploaded_by = models.ForeignKey(User, default=None, null=True)  # , required=False)
+    file = models.FileField("Select file to upload", upload_to='images')
+```
+
+##### CharField
+
+- Can you guess how to serialize a `CharField`?
+- What does a CharField store? 
+- What is a good `str` or serial representation of a `CharField`
 
 
+##### ForeignKey
+
+We have a foreign key to another model, `User`. How do we deal with that?
+
+What is a good, unambiguous serial representation of a User instance in our DB?
+
+How does our app *id*entify a particular user?
+
+##### DateTimeField
+
+How do you serialize a date?
+
+Is it always deserializable?
+
+How can we test a serializer for dates?
+
+##### FileField
+
+How can we represent a FileField?
+
+What does the `str` representation of a FileField look like?
+
+Is that good enough?
+
+How is `FileField` like a `ForeignKey`?
+
+Can we provide a representation that would allow the client to "dig deeper" if they wanted to, without slowing down the API response by sending them the entire image?
 
