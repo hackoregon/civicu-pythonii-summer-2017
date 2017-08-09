@@ -11,7 +11,7 @@ csvkit:
 pgcli:
 [https://github.com/dbcli/pgcli](https://github.com/dbcli/pgcli)
 
-Sql reference: 
+SQL reference: 
 [https://www.w3schools.com/sql/](https://www.w3schools.com/sql/sql_alter.asp)
  
 #### 1. Make a virtual environment 
