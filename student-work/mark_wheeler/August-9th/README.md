@@ -1,6 +1,6 @@
 ## Resources:
 SQLite:
-[https://www.sqlite.org/index.html](https://www.sqlite.org/index)
+[https://www.sqlite.org](https://www.sqlite.org/index.html)
 
 csvkit: 
 [https://csvkit.readthedocs.io/en/1.0.2/](https://csvkit.readthedocs.io/en/1.0.2/)
@@ -9,7 +9,7 @@ pgcli:
 [https://github.com/dbcli/pgcli](https://github.com/dbcli/pgcli)
 
 Sql reference: 
-[https://www.w3schools.com/sql/sql_alter.asp](https://www.w3schools.com/sql/sql_alter.asp)
+[https://www.w3schools.com/sql/](https://www.w3schools.com/sql/sql_alter.asp)
  
 #### 1. Make a virtual environment 
 Complete these steps inside the ```civicu-pythonii-summer-2017/student-work/<user>``` repo or in local workspace
