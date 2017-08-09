@@ -1,4 +1,6 @@
 ## Resources:
+SQLite:
+[https://www.sqlite.org/index.html](https://www.sqlite.org/index)
 
 csvkit: 
 [https://csvkit.readthedocs.io/en/1.0.2/](https://csvkit.readthedocs.io/en/1.0.2/)
