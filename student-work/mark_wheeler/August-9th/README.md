@@ -39,8 +39,12 @@ Excel file:
 csv file:
 [crimedata.csv](https://github.com/hackoregon/hack-university-database-engineering/blob/master/Data/Crime%20Data/crimedata.csv)
 
+#### 4. Clone Repository
+Django example repo:
+git clone https://github.com/Zak-Kent/Hack_O_DjangoREST_Tut.git
 
-
+#### 5. Django data exercise
+https://github.com/Zak-Kent/Hack_O_DjangoREST_Tut
 
 
 
