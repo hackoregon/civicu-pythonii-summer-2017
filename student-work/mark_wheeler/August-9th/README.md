@@ -2,6 +2,9 @@
 SQLite:
 [https://www.sqlite.org](https://www.sqlite.org/index.html)
 
+SQLite commands:
+[https://sqlite.org/cli](https://sqlite.org/cli.html)
+
 csvkit: 
 [https://csvkit.readthedocs.io/en/1.0.2/](https://csvkit.readthedocs.io/en/1.0.2/)
 
