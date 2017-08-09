@@ -32,9 +32,14 @@ pgcli install:
 [https://www.pgcli.com/install](https://www.pgcli.com/install)
 - pip install pgcli
   
-#### 3. Start server
+#### 3. Download data files
+Excel file:
+[ne_1033_data.xlsx](https://raw.githubusercontent.com/wireservice/csvkit/master/examples/realdata/ne_1033_data.xlsx)
 
-    
+csv file:
+[crimedata.csv](https://github.com/hackoregon/hack-university-database-engineering/blob/master/Data/Crime%20Data/crimedata.csv)
+
+
 
 
 
