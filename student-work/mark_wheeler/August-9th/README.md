@@ -29,9 +29,8 @@ csvkit install:
 - pip install csvkit
 
 pgcli install:
-
-
-
+[https://www.pgcli.com/install](https://www.pgcli.com/install)
+- pip install pgcli
   
 #### 3. Start server
 
