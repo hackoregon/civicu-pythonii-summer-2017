@@ -26,6 +26,10 @@ Complete these steps inside the ```civicu-pythonii-summer-2017/student-work/<use
 #### 2. Pip package installs
 csvkit install:
 [https://csvkit.readthedocs.io/en/0.9.1/install](https://csvkit.readthedocs.io/en/0.9.1/install.html)
+- pip install csvkit
+
+pgcli install:
+
 
 
   
