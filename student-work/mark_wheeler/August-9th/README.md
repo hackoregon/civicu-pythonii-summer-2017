@@ -23,7 +23,10 @@ Complete these steps inside the ```civicu-pythonii-summer-2017/student-work/<use
   - ```source venv3/Scripts/activate``` 
   - command above activates the virtual environment your command line prompt should start with ```(venv3)``` if it worked
   
-#### 2. Install depencencies with pip
+#### 2. Pip package installs
+csvkit install:
+[https://csvkit.readthedocs.io/en/0.9.1/install](https://csvkit.readthedocs.io/en/0.9.1/install.html)
+
 
   
 #### 3. Start server
