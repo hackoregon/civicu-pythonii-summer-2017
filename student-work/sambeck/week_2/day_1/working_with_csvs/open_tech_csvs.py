@@ -2,8 +2,10 @@
 # either reference them by uning a relative path
 # Ex. "../../../../../shared-resources/<csv_file_name>.csv"
 # or if you prefer you can make a copy and move the files into this directory
-# just please try to remember not to commit the csv files when you're saving
-# your work.
+
+# just please try to remember not to commit the csv files when you're saving 
+# your work. 
+
 
 import csv
 import geo_distance
@@ -127,3 +129,4 @@ def do_program():
 
 if __name__ == '__main__':
     do_program()
+
