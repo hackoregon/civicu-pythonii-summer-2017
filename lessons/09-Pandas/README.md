@@ -2,9 +2,27 @@
 
 ## DRF Review
 
-- I forgot to install `rest_framework` in our `settings.INSTALLED_APPS`
-- Also, Zak's example uses the `fields = '__all__'` which simplifies the `Serializer`
-- To enable the *C* in *C*RUD we need to change our base generic type for the view so it responds to a POST
+### Need to install `rest_framework` in our `settings.INSTALLED_APPS`
+
+```python
+
+```
+
+### Zak's example uses the `fields = '__all__'` which simplifies the `Serializer`
+
+
+```python
+
+```
+
+### Enable the *C* in *C*RUD by changing our base generic type for the view so it responds to a POST
+
+
+```python
+
+```
+
+### Using POST to upload pictures
 
 ```python
 >>> POST_data = {'caption': 'posted bear', 'uploaded_by': 1}
@@ -17,23 +35,6 @@ Isn't that cool!
 
 Now you can cycle through an entire directory of Pictures and upload them to your labeler app.
 
-## Database Review
-
-- What is `csvkit`?
-- What is `agate`?
-- What do you like about them?
-- What do you not like or wish they could do?
-
-## Survey Review
-
-- More homework
-- More challenging classwork
-- More structure
-
-## Pandas
-
-Pandas is a data table wrangling and visualization library. It's a lot like `csvkit` and `agate`, only more powerful. It has a lot of import export features for formats like CSV, JSON, XML, HTML, and even SQL so it's useful as a translator between data formats. And it can produce beautiful plots.
-
 Let's get some paths and URLs for your system:
 
 ```python
@@ -44,6 +45,7 @@ Let's get some paths and URLs for your system:
 ```
 
 Now let's walk the entire tree of files and push them up to our server.
+
 
 ```python
 >>> for dirname, dirnames, filenames in os.walk(base_dir):
@@ -66,4 +68,19 @@ Now let's walk the entire tree of files and push them up to our server.
 
 ```
 
+## Database Review
 
+- What is `csvkit`?
+- What is `agate`?
+- What do you like about them?
+- What do you not like or wish they could do?
+
+## Survey Review
+
+- More homework
+- More challenging classwork
+- More structure
+
+## Pandas
+
+Pandas is a data table wrangling and visualization library. It's a lot like `csvkit` and `agate`, only more powerful. It has a lot of import export features for formats like CSV, JSON, XML, HTML, and even SQL so it's useful as a translator between data formats. And it can produce beautiful plots.
