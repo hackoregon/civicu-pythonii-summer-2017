@@ -96,7 +96,7 @@ with open(os.path.join(base_dir, 'bear', filename), 'rb') as fin:
              'file_name': filename}
     resp = requests.post(url, data=POST_data, files=files)
     print(resp)
-    
+
 ```
 
 Isn't that cool!
@@ -139,6 +139,10 @@ Now let's walk the entire tree of files and push them up to our server.
 ### Exercise
 
 Incorporate this into your bot's skills by adding an argument to the argparser to upload an image file from your computer to your API.
+
+You can see how I started to implement mine [here](https://github.com/totalgood/civicu_app/blob/e343a7380754fa563f43f85957473ea32ecab318/labeler_site/bot.py)
+
+And atttempt two more exercism exercises.
 
 
 
