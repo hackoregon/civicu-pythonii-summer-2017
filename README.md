@@ -74,25 +74,25 @@ If you have any questions or concerns beforehand feel free to contact me via our
 
 ### Here's the Original Syllabus
 
-Date     | Topics                                                                    | Challenge
--------------------------------------------------------------------------------------------------
-Mon 7/10 | class structure, tools: bash, git, pair coding                            | exercism hello world
-Wed 7/12 | Python review, debugging, problem solving strategies                      | exercism for loop
-Mon 7/17 | list comprehentions, generators and lazy evaluation, cleaning csv files   | read & write csv
-Wed 7/19 | Django, `manage.py`, `settings.INTALLED_APPS`, `shell\_plus`              | `runserver` with hello world
-Mon 7/24 | WSGI, `unittest`, HTTP request/response cycle                             | sum PDX homeless count requests
-Wed 7/26 | Django Rest Framework (DRF)                                               | build an endpoint
-Mon 7/31 | Django `Model.objects.filter`, `querysets`, testing API endpoints         | filter your endpoint, test
-Wed 8/02 | use ORM (models.py) outside of django manage.py, `Super()`                | bot that modifes database
-Mon 8/07 | fixtures, mocks, and decorators for testing                               | create a fixture to test a django app
-Wed 8/09 | scraping (Beautiful Soup) and 3rd party APIs                              | download some tweets from twitter 
-Mon 8/14 | Scrapy bots to gather data                                                | Scrapy challenge
-Wed 8/16 | functional programming, bottom's up approach to problem solving           | improve student API
-Mon 8/21 | advanced functional programming                                           | improve student API
-Wed 8/23 | deployment (heroku)                                                       | deploy your django app
-Mon 8/28 | GraphQL                                                                   | Graph Query challenge
-Wed 8/30 | More GraphQL                                                              | Graph Query challenge
-
+Date     | Topics                                                                    | Challenge  
+-------------------------------------------------------------------------------------------------  
+Mon 7/10 | class structure, tools: bash, git, pair coding                            | exercism hello world  
+Wed 7/12 | Python review, debugging, problem solving strategies                      | exercism for loop  
+Mon 7/17 | list comprehentions, generators and lazy evaluation, cleaning csv files   | read & write csv  
+Wed 7/19 | Django, `manage.py`, `settings.INTALLED_APPS`, `shell\_plus`              | `runserver` with hello world  
+Mon 7/24 | WSGI, `unittest`, HTTP request/response cycle                             | sum PDX homeless count requests  
+Wed 7/26 | Django Rest Framework (DRF)                                               | build an endpoint  
+Mon 7/31 | Django `Model.objects.filter`, `querysets`, testing API endpoints         | filter your endpoint, test  
+Wed 8/02 | use ORM (models.py) outside of django manage.py, `Super()`                | bot that modifes database  
+Mon 8/07 | fixtures, mocks, and decorators for testing                               | create a fixture to test a django app  
+Wed 8/09 | scraping (Beautiful Soup) and 3rd party APIs                              | download some tweets from twitter   
+Mon 8/14 | Scrapy bots to gather data                                                | Scrapy challenge  
+Wed 8/16 | functional programming, bottom's up approach to problem solving           | improve student API  
+Mon 8/21 | advanced functional programming                                           | improve student API  
+Wed 8/23 | deployment (heroku)                                                       | deploy your django app  
+Mon 8/28 | GraphQL                                                                   | Graph Query challenge  
+Wed 8/30 | More GraphQL                                                              | Graph Query challenge  
+  
 
 ### Updated Syllabus
  

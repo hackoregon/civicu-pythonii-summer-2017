@@ -2,12 +2,13 @@
 # either reference them by uning a relative path
 # Ex. "../../../../../shared-resources/<csv_file_name>.csv"
 # or if you prefer you can make a copy and move the files into this directory
-# just please try to remember not to commit the csv files when you're saving 
-# your work. 
+# just please try to remember not to commit the csv files when you're saving
+# your work.
 
 
 import csv
 import geo_distance
+
 
 def find_airports(city):
     with open("airports.csv") as file:
@@ -50,4 +51,3 @@ def distance(city1, city2):
             writer.writerow(row)
 
 distance('New York', 'Paris')
-
