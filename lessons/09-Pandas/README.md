@@ -1,5 +1,10 @@
 # Data Wrangling (Pandas)
 
+- Review DB and SQL skills
+- Review building DRF APIs
+- Enhance our DRF API with a POST (upload)
+- Explore Pandas
+
 We're going to spend some more time today talking about data, retrieving it and inserting it into a DB, and changing/cleaning it. This is called "Data Wrangling" within the Data Science and DB Engineering world.
 
 ## Survey Review
