@@ -71,7 +71,7 @@ do
         notebooks=("$lesson"/*.ipynb)
         # echo "${#notebooks[@]}"
         # echo "$lesson"/*.ipynb
-        if [ "${#notebooks[@]}" -gt 1 ]; then
+        if [[ "${#notebooks[@]}" -gt 1 ]]; then
             # echo "${#notebooks[@]}"
             echo $notebooks
             jupyter nbconvert --to markdown "$lesson"/*.ipynb

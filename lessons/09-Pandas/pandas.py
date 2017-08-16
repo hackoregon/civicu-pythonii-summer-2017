@@ -14,7 +14,7 @@ import json
 
 pd.set_option('display.max_columns', 200)
 pd.set_option('display.max_rows', 10)
-get_ipython().magic('matplotlib inline')
+get_ipython().magic(u'matplotlib inline')
 mpld3.enable_notebook()
 
 
@@ -296,7 +296,7 @@ plt.show()
 # In[92]:
 
 
-get_ipython().magic('pinfo df.plot')
+get_ipython().magic(u'pinfo df.plot')
 
 
 # In[90]:
@@ -314,7 +314,7 @@ df.plot.density(x='xcoordinate', y='ycoordinate')
 # In[95]:
 
 
-get_ipython().system('pip install mpld3')
+get_ipython().system(u'pip install mpld3')
 import mpld3
 
 
