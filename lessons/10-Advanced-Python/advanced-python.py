@@ -6,18 +6,6 @@
 
 import os
 # !pip install seaborn
-import seaborn
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-# !pip install mpld3
-# import mpld3  # mpld3 plots take much longer to render
-import json
-
-pd.set_option('display.max_columns', 200)
-pd.set_option('display.max_rows', 10)
-get_ipython().magic('matplotlib inline')
-# mpld3.enable_notebook()
 
 
 # In[12]:
