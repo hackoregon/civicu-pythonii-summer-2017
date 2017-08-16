@@ -16,6 +16,62 @@ mpld3.enable_notebook()
 ```
 
 
+    ---------------------------------------------------------------------------
+
+    AttributeError                            Traceback (most recent call last)
+
+    <ipython-input-1-6030de22e6bf> in <module>()
+          1 import os
+    ----> 2 import pandas as pd
+          3 import numpy as np
+          4 import matplotlib.pyplot as plt
+          5 import mpld3
+
+
+    ~/src/civicu-pythonii-summer-2017/lessons/09-Pandas/pandas.py in <module>()
+         10 import matplotlib.pyplot as plt
+         11 import mpld3
+    ---> 12 import seaborn
+         13 import json
+         14 
+
+
+    ~/.virtualenvs/civicu/lib/python3.5/site-packages/seaborn/__init__.py in <module>()
+          4 
+          5 # Import seaborn objects
+    ----> 6 from .rcmod import *
+          7 from .utils import *
+          8 from .palettes import *
+
+
+    ~/.virtualenvs/civicu/lib/python3.5/site-packages/seaborn/rcmod.py in <module>()
+          6 import matplotlib as mpl
+          7 
+    ----> 8 from . import palettes, _orig_rc_params
+          9 
+         10 
+
+
+    ~/.virtualenvs/civicu/lib/python3.5/site-packages/seaborn/palettes.py in <module>()
+         10 from .external.six.moves import range
+         11 
+    ---> 12 from .utils import desaturate, set_hls_values, get_color_cycle
+         13 from .xkcd_rgb import xkcd_rgb
+         14 from .crayons import crayons
+
+
+    ~/.virtualenvs/civicu/lib/python3.5/site-packages/seaborn/utils.py in <module>()
+         13 
+         14 from distutils.version import LooseVersion
+    ---> 15 pandas_has_categoricals = LooseVersion(pd.__version__) >= "0.15"
+         16 mpl_ge_150 = LooseVersion(mpl.__version__) >= "1.5.0"
+         17 from .external.six.moves.urllib.request import urlopen, urlretrieve
+
+
+    AttributeError: module 'pandas' has no attribute '__version__'
+
+
+
 ```python
 # df = pd.read_csv('../shared-resources/crimedata.csv')
 df = pd.DataFrame.from_csv('../shared-resources/crimedata.csv', index_col=0)
@@ -23,121 +79,17 @@ df.tail()
 ```
 
 
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-2-e0d88658f809> in <module>()
+          1 # df = pd.read_csv('../shared-resources/crimedata.csv')
+    ----> 2 df = pd.DataFrame.from_csv('../shared-resources/crimedata.csv', index_col=0)
+          3 df.tail()
 
 
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>record_id</th>
-      <th>report_date</th>
-      <th>report_time</th>
-      <th>major_offense_type</th>
-      <th>address</th>
-      <th>neighborhood</th>
-      <th>police_precinct</th>
-      <th>police_district</th>
-      <th>xcoordinate</th>
-      <th>ycoordinate</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>61502</th>
-      <td>14462443</td>
-      <td>2014-11-16</td>
-      <td>19:19:00</td>
-      <td>Larceny</td>
-      <td>2001-2099 block of NW KEARNEY ST, PORTLAND, OR...</td>
-      <td>NORTHWEST</td>
-      <td>PORTLAND PREC CE</td>
-      <td>810</td>
-      <td>7.640298e+06</td>
-      <td>686652.67979</td>
-    </tr>
-    <tr>
-      <th>61503</th>
-      <td>14380280</td>
-      <td>2014-06-16</td>
-      <td>08:39:00</td>
-      <td>Disorderly Conduct</td>
-      <td>1901-2099 block of NE HALSEY ST, PORTLAND, OR ...</td>
-      <td>SULLIVANS GULCH</td>
-      <td>PORTLAND PREC NO</td>
-      <td>670</td>
-      <td>7.652081e+06</td>
-      <td>687944.91175</td>
-    </tr>
-    <tr>
-      <th>61504</th>
-      <td>14399950</td>
-      <td>2014-07-16</td>
-      <td>11:02:00</td>
-      <td>Liquor Laws</td>
-      <td>0-298 block of NW 22ND PL, PORTLAND, OR 97210</td>
-      <td>NORTHWEST</td>
-      <td>PORTLAND PREC CE</td>
-      <td>810</td>
-      <td>7.638988e+06</td>
-      <td>684566.18996</td>
-    </tr>
-    <tr>
-      <th>61505</th>
-      <td>14426109</td>
-      <td>2014-09-01</td>
-      <td>15:33:00</td>
-      <td>Larceny</td>
-      <td>WASHINGTON PARK</td>
-      <td>ARLINGTON HGHTS</td>
-      <td>PORTLAND PREC CE</td>
-      <td>860</td>
-      <td>7.638009e+06</td>
-      <td>683215.81507</td>
-    </tr>
-    <tr>
-      <th>61506</th>
-      <td>14424628</td>
-      <td>2014-09-13</td>
-      <td>19:55:00</td>
-      <td>Larceny</td>
-      <td>14133-14299 block of NE WEIDLER ST, PORTLAND, ...</td>
-      <td>WILKES</td>
-      <td>PORTLAND PREC EA</td>
-      <td>942</td>
-      <td>7.685328e+06</td>
-      <td>687304.98392</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+    NameError: name 'pd' is not defined
 
 
 ### Lets set our index to the `report_date` column
@@ -1191,7 +1143,7 @@ plt.show()
 ```
 
 
-![png](pandas_files/pandas_27_0.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_27_0.png)
 
 
 
@@ -1216,11 +1168,11 @@ plt.show()
 ```
 
 
-![png](pandas_files/pandas_29_0.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_29_0.png)
 
 
 
-![png](pandas_files/pandas_29_1.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_29_1.png)
 
 
 
@@ -1343,7 +1295,7 @@ plt.show()
 ```
 
 
-![png](pandas_files/pandas_35_0.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_35_0.png)
 
 
 
@@ -1364,7 +1316,7 @@ plt.show()
 ```
 
 
-![png](pandas_files/pandas_37_0.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_37_0.png)
 
 
 
@@ -1386,7 +1338,7 @@ plt.show()
 ```
 
 
-![png](pandas_files/pandas_39_0.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_39_0.png)
 
 
 
@@ -1402,7 +1354,7 @@ plt.show()
 ```
 
 
-![png](pandas_files/pandas_41_0.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_41_0.png)
 
 
 
@@ -1580,7 +1532,7 @@ plt.show()
 ```
 
 
-![png](pandas_files/pandas_45_0.png)
+![png](data-wranglin-with-Pandas_files/data-wranglin-with-Pandas_45_0.png)
 
 
 

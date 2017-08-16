@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[33]:
+# In[1]:
 
 
 import os
@@ -18,7 +18,7 @@ get_ipython().magic(u'matplotlib inline')
 mpld3.enable_notebook()
 
 
-# In[7]:
+# In[2]:
 
 
 # df = pd.read_csv('../shared-resources/crimedata.csv')
