@@ -68,7 +68,7 @@ for lesson in $LESSONS
 do
     echo "$lesson"
     if [ -d "$lesson" ]; then
-        notebooks="$lesson"/*.ipynb
+        notebooks=("$lesson"/*.ipynb)
         # echo "${#notebooks[@]}"
         # echo "$lesson"/*.ipynb
         if [ "${#notebooks[@]}" -gt 1 ]; then
