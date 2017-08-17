@@ -83,10 +83,20 @@ class ListImages(generics.ListCreateAPIView):
 [This StackOverflow question](https://stackoverflow.com/questions/20217348/requests-post-files-upload-large-file-more-than-1-5-mb-python) can help you compose a POST request that interacts with a "FileField" to upload an image.
 
 ```python
->>> POST_data = {'caption': 'posted bear', 'uploaded_by': 1}
->>> files = {'file': ('barlow-rd-2014-a-095_30343888245_o.jpg', open('/home/hobs/Pictures/bear/barlow-rd-2014-a-095_30343888245_o.jpg', 'rb')), 'file_name': 'barlow-rd-2014-a-095_30343888245_o.jpg'}
->>> resp = requests.post('http://localhost:8000/api/', data=POST_data, files=f)
->>> resp
+import requests
+import os
+
+base_dir = os.path.join(os.getenv('HOME'), 'Pictures')
+url = 'http://localhost:8000/api/'
+filename = 'barlow-rd-2014-a-095_30343888245_o.jpg'
+with open(os.path.join(base_dir, 'bear', filename), 'rb') as fin:
+    print(fin.name)
+    POST_data = {'caption': 'posted bear'}
+    files = {'file': (filename, fin),
+             'file_name': filename}
+    resp = requests.post(url, data=POST_data, files=files)
+    print(resp)
+
 ```
 
 Isn't that cool!
@@ -129,6 +139,10 @@ Now let's walk the entire tree of files and push them up to our server.
 ### Exercise
 
 Incorporate this into your bot's skills by adding an argument to the argparser to upload an image file from your computer to your API.
+
+You can see how I started to implement mine [here](https://github.com/totalgood/civicu_app/blob/e343a7380754fa563f43f85957473ea32ecab318/labeler_site/bot.py)
+
+And atttempt two more exercism exercises.
 
 
 

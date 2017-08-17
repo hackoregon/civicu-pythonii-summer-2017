@@ -1,11 +1,18 @@
+class Person:
+        def __init__(self, fn, ln, id, food_list):
+            self.fn = fn
+            self.ln = ln
+            self.id = id
+            self.food_list = {}
 
-class Myclass:
-    pass
+        def show_list(self):
+            print(self.food_list, self.ln)
 
+        def add_to_food_list(self, food):
+            self.food_list[]
 
-
-
-
+    sed = Me("Sed", "Cash", 23, "bacon")
+    sed.show_list()
 
 
 

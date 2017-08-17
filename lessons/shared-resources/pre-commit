@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # An example hook script to verify what is about to be committed.
 # Called by "git commit" with no arguments.  The hook should
@@ -45,19 +45,41 @@ EOF
 	exit 1
 fi
 
-echo $PWD
-SLIDES=docs/slides
-git add $SLIDES/*.md
-$SLIDES/build $SLIDES/*.md
-git add $SLIDES/*.html
+# echo $PWD
+# SLIDES=docs/slides
+# git add $SLIDES/*.md
+# $SLIDES/build $SLIDES/*.md
+# git add $SLIDES/*.html
 
 #!/bin/sh
 # run lint checker (flake8) script in the background
 echo "Sending linting (flake8) output to .git/hooks/.flake8_lint.log"
-nohup ./.git/hooks/delint_working_dir 2>&1  | tee .git/hooks/.delint_working_dir.log &
+# nohup ./.git/hooks/delint_working_dir 2>&1  | tee .git/hooks/.delint_working_dir.log &
+nohup ./.git/hooks/delint_working_dir 2>&1  > .git/hooks/.delint_working_dir.log
 
-pandoc -o README.rst docs/README.md
-git add README.rst
+if [ -f "README.rst" ]; then
+    pandoc -o README.rst docs/README.md
+    git add README.rst
+fi
+
+
+LESSONS="lessons/"*
+for lesson in $LESSONS
+do
+    # echo "$lesson"
+    if [ -d "$lesson" ]; then
+        notebooks=("$lesson"/*.ipynb)
+        # echo "${#notebooks[@]}"
+        # echo "$lesson"/*.ipynb
+        if [[ "${#notebooks[@]}" -gt 1 ]]; then
+            # echo "${#notebooks[@]}"
+            echo $notebooks
+            jupyter nbconvert --to markdown "$lesson"/*.ipynb
+            git add "$lesson"/
+        fi
+    fi
+done
 
 # # If there are whitespace errors, print the offending file names and fail.
 # exec git diff-index --check --cached $against --
+
