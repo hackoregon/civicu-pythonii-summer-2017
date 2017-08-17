@@ -75,7 +75,6 @@ do
             # echo "${#notebooks[@]}"
             echo $notebooks
             jupyter nbconvert --to markdown "$lesson"/*.ipynb
-            jupyter nbconvert --to python "$lesson"/*.ipynb
             git add "$lesson"/
         fi
     fi
