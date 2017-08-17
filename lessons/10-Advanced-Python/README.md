@@ -76,10 +76,16 @@ You're not allowed to Google, but you are allowed to use all the resources and c
 
 ## Exercism Exercises
 
+[my exercisms](https://github.com/hackoregon/civicu-pythonii-summer-2017/blob/master/student-work/hobson_lane/exercism/python/)
+
 
 ## Bot Assignment
 
 [my solution](https://github.com/totalgood/civicu_app/blob/master/labeler_site/bot.py)
+
+## Git Hooks
+
+[my hook](https://github.com/hackoregon/civicu-pythonii-summer-2017/blob/master/lessons/shared-resources/pre-commit)
 
 ## zip
 
