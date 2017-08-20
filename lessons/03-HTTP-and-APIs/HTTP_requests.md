@@ -6,9 +6,11 @@ Python's requests library gives us an easy way to make requests and then access 
 The requests library needs to be installed and can be installed easily using pip. Run `pip install requests` in a terminal and you should be good to go. Then you just import the module like any other at the top of your file. 
 
 ### Using the Star Wars API (SWAPI)
+
 The [Star Wars API](http://swapi.co/documentation) is what we will be using today during our group challenge to get familiar with making requests and parsing JSON. This API is ideal for this purpose because it doesn't require user authentication and will let us make up to 10,000 requests per day without being rate limited. Below you'll find the basic building blocks for making `GET` requests.
 
 #### Example `GET` request
+
 ```Python
 import requests
 
@@ -24,6 +26,7 @@ print(response.headers) # will print out any header information in the request
 ```
 
 #### Requests built in JSON decoder
+
 The requests library has a built in JSON decoder that lets us decode the JSON object sent in the body of a response. 
 ```Python
 response = requests.get("http://swapi.co/api/films/")

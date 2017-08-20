@@ -74,7 +74,7 @@ What endpoints do we need to make this possible?
 Which tables are these going to query?
 
 The first four of these are queries or insertions of a single row in a single table.
-The bottomA couple of them are aggregations across many rows in a table.
+A couple of them are aggregations across many rows in a table.
 For now we'll focus on the single-row endpoints.
 Your client can then do any aggregations you like in python.
 After the next lesson about Databases and Django's ORM you can implement customized "shortcut" endpoints for computing these totals or aggregations.
