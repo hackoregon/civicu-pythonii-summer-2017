@@ -2,19 +2,7 @@
 
 ```python
 import os
-# !pip install seaborn
-import seaborn
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-# !pip install mpld3
-import mpld3
-import json
 
-pd.set_option('display.max_columns', 200)
-pd.set_option('display.max_rows', 10)
-%matplotlib inline
-mpld3.enable_notebook()
 ```
 
 
