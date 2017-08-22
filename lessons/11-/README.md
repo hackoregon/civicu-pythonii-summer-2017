@@ -208,7 +208,17 @@ database.sqlite3 -> models.py -> views.py -> template.html -> urls.py -> Browser
 
 ### Model
 
+Models give you (and django) a pythonic way of defining the structure (schema) of your database and then accessing your data through an ORM (Object Relational Mapping = objects that represent data records from your database).
+
+  - query for records (QuerySet)
+  - create tables
+  - modify tables without losing data from the existing tables
+  - add records to your database tables
+  - maintaining valid relationships between your tables (query validation)
+
 ### View
+
+You need one view for each "kind" of page you want in your app.
 
 ### Template
 
