@@ -133,12 +133,7 @@ class Vehicle:
     >>> type(mycar)
     __main__.Vehicle
     """
-    tag = ''
-    vin = ''
-    make = 'Tesla'
-    model = ''
-
-    def __init__(self, vin=vin, tag=tag, make=make, model=model, features=None):
+    def __init__(self, vin='', tag='', make='Tesla', model='', features=None):
         self.vin = vin
         self.tag = tag
         self.make = make
@@ -146,9 +141,9 @@ class Vehicle:
         self.features = set(features or set())
 
     def is_manual(self):
-        return 'automatic transmission' in self.features
+        return 'manual transmission' in self.features
 
-    def __str__(self):
+    def __svtr__(self):
         return repr(self)
 
     def __repr__(self):
