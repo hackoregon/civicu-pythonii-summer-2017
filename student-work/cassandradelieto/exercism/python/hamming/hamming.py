@@ -15,6 +15,6 @@ def distance(strand1, strand2):
     return hamming
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     #print(distance("AA", "AAGGGGA"))
     #print(distance(None, "AAGGGGA"))
