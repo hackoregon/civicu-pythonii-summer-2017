@@ -28,7 +28,7 @@
 
 ### Exercisms
 
-- completed 10 Python exercisms
+- completed 12 Python exercisms
 
 ### Final Exam (3hr)
 
@@ -76,10 +76,15 @@ You're not allowed to Google, but you are allowed to use all the resources and c
 
 ## Exercism Exercises
 
+[my exercisms](https://github.com/hackoregon/civicu-pythonii-summer-2017/blob/master/student-work/hobson_lane/exercism/python/)
 
 ## Bot Assignment
 
 [my solution](https://github.com/totalgood/civicu_app/blob/master/labeler_site/bot.py)
+
+## Git Hooks
+
+[my hook](https://github.com/hackoregon/civicu-pythonii-summer-2017/blob/master/lessons/shared-resources/pre-commit)
 
 ## zip
 
@@ -110,3 +115,7 @@ You're not allowed to Google, but you are allowed to use all the resources and c
 - [Jupyter Notebook](python-scripts.ipynb)
 - [markdown](python-scripts.md)
 
+
+# Challenge
+
+2 more exercisms for a total of 6
