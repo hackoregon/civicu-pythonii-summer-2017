@@ -11,6 +11,6 @@ def is_isogram(s):
     """
     from collections import Counter
     s = s.lower().strip()
-    s = [c for c in s if ord('a') <= ord(c) <= ord('z')]
+    s = [c for c in s if c.isalpha()]
     counts = Counter(s).values()
     return max(counts or [1]) == 1
