@@ -75,6 +75,16 @@ Doctests are also bad for functions that return large complicated data structure
 So you still need unittests.
 But with a few lines of code your unittests can be configured to *also* run doctests. 
 
+```python
+>>> import doctest
+>>> from labeler_site import bot
+>>> doctest.testmod(bot)
+```
+
+How would you do this inside of a `TestCase`?
+What are the return values for `doctest.testmod`?
+Could you have an `assert` or `assertEqual` in your `TestCase`?
+
 ## `coverage` with [coveralls.io](http://coveralls.io) 
 
 The python package coverage allows you to see how many of your lines of code are run during your tests!
