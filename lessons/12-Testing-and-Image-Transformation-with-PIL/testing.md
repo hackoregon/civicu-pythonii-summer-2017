@@ -75,11 +75,67 @@ Doctests are also bad for functions that return large complicated data structure
 So you still need unittests.
 But with a few lines of code your unittests can be configured to *also* run doctests. 
 
-## Coverage and Coveralls.io
+## `coverage` with [coveralls.io](http://coveralls.io) 
 
 The python package coverage allows you to see how many of your lines of code are run during your tests!
 This can provide you with a detailed report of your "test coverage" and give you ideas for more tests to run.
 And if you hook coveralls.io up to your app you can add a badge to your github README.md so that you can "reward yourself" for increased coverage.
+
+## `codecov` with [codecov.io](http://codecov.io)
+
+You can generate coverage reports using your `.travs.yml` and `pip install codecov` for any python package (django or otherwise).
+
+So add `codecov` to your `test-requirements.txt`.
+
+```text
+# Add requirements only needed for your unittests and during development here.
+# They will be installed automatically when running `python setup.py test`.
+# ATTENTION: Don't remove pytest-cov and pytest as they are needed for `python setup.py test`.
+pytest-cov
+pytest
+coverage
+codecov
+doctest2
+```
+
+And make sure your `test-requirements.txt` are installed on travis by adding them to your `.travis.yml` under the `install:` key.
+Since codecov will be installed you can add it to the `after_success:` key so that it generates a coverage report each time your tests pass.
+This report will be uploaded to [codecov.io](codecov.io) once you have linked it to your `github.com` account.
+
+```yaml
+sudo: false
+language: python
+virtualenv:
+  system_site_packages: false
+env:
+  matrix:
+    # - DISTRIB="ubuntu" PYTHON_VERSION="2.7" COVERAGE="true"
+    # - DISTRIB="conda" PYTHON_VERSION="2.7" COVERAGE="false"
+    # - DISTRIB="conda" PYTHON_VERSION="3.3" COVERAGE="false"
+    # - DISTRIB="conda" PYTHON_VERSION="3.5" COVERAGE="false"
+    - DISTRIB="ubuntu" PYTHON_VERSION="3.5" COVERAGE="false"
+addons:
+  apt:
+    packages:
+      - git
+      - python-pip
+install:
+  # - source tests/travis_install.sh
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+  - pip install -r test-requirements.txt    # THIS INSTALL CODECOV, etc.
+before_script:
+  - git config --global user.email "travis.github@totalgood.com"
+  - git config --global user.name "Travis Testing for Total Good civicu_app"
+script:
+  - python manage.py test
+  - python setup.py test
+after_success:
+  - codecov  # THIS WILL UPLOAD COVERAGE REPORT TO codecov.io
+  - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
+cache:
+  - apt
+```
 
 ## Continuous integration
 
@@ -123,3 +179,19 @@ Code reviews can also happen when you issue a PR to master from develop.
 
 - Sign up for a free Travis account
 - edit the .travis.yml file
+- add a badge (URL to an image) for your Travis test fail/success 
+
+##### Add a Badge
+
+Hack your travis url to find an image that is green when your tests pass.
+Mine was here: `https://travis-ci.org/totalgood/civicu_app.svg`.
+And my travis page for reviewing the `builds` for that app was here: `https://travis-ci.org/totalgood/civicu_app/`.
+
+So this markdown creates an image on my github profile page for my `civicu_app` that tells me when your tests pass:
+
+```markdown
++[![Build Status](https://travis-ci.org/totalgood/civicu_app.svg?branch=master)](https://travis-ci.org/totalgood/civicu_app/)
+```
+
+Now my development workflow is "gamified".
+Like a linter, this encourages me to do things right... to not break my tests and write correct code.
