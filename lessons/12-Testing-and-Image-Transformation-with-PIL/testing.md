@@ -24,6 +24,7 @@ Each function (each unittest) needs a fresh, reliable, consistent set of data, s
 We can create a json dump of our exising data using the `dumpdata` manage.py command:
 
 ```bash
+mkdir labeler/fixtures
 python manage.py dumpdata --indent=2 labeler > labeler/fixtures/labeler_test_data.json
 ```
 
@@ -45,9 +46,18 @@ And then
 
 This will dump your apps data to a json file under the fixtures directory in your app. Other available formats are .xml and .yaml (see https://docs.djangoproject.com/en/1.8/ref/django-admin/#dumpdata-app-label-app-label-app-label-modelfor more options).
 
-In your settings.py file you will need to tell django about where your fixtures reside like this:
+In your tests.py file you will need to tell your tests to load the fixture:
 
-FIXTURE_DIRS = (‘civicu_app/labeler/fixtures/’)
+```
+import labeler_site.settings
+from .models import Image
+# from .forms import FileUploadForm
+
+MEDIA_ROOT = labeler_site.settings.MEDIA_ROOT
+
+
+class ImageModelTest(TestCase):
+    fixtures = ['labeler_test_data.json']
 ```
 
 And you'll want to create this fixtures
