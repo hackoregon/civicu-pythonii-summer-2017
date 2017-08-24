@@ -137,6 +137,24 @@ cache:
   - apt
 ```
 
+It may help to add your codecov "Upload Token" to the travis.yml settings for your repo.
+Click on the "More Options" button in the upper right for the travis-ci page for your repo.
+Select the "Settings" gear menu item.
+Scroll down the setting until you find "Environment Variables".
+The environment variable name is `CODECOV_TOKEN` and the "value" is your "Upload Token" from your codecov.io accounts page.
+
+You can do this for your local environment with:
+
+```bash
+export CODECOV_TOKEN="19abc123-hex8-9876-a881-8412af152dc0"  # USE *YOUR* TOKEN
+```
+
+Or you can run it manually with
+
+```bash
+codecov --token=19abc123-hex8-9876-a881-8412af152dc0
+```
+
 ## Continuous integration
 
 Continuous integration is when you allow your code to be deployed or integrated without any manual human QA testing.
