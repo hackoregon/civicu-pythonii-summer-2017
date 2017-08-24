@@ -1,12 +1,15 @@
 # Git resources
+
 This README file will contain information about how we will be using github as a class. In addition to the setup materials you have already seen there is a section meant to be used as a cheat sheet for the common git/GitHub things that we will need to do on a regular basis.
 
 ## Useful links
+
 Here are some links to Git tutorials and other resources that may help if you're looking for extra Git practice or a refresher. 
 * [Link to interactive Git tutorial](https://try.github.io/levels/1/challenges/1)
 * [List of GitHub recommened resources](https://help.github.com/articles/git-and-github-learning-resources/)
 
 ## Diagram of class's Git workflow
+
 ![Diagram_of_class_git_workflow](../images/class_git.png)
 
 The diagram above shows the normal workflow we will be using a class. Notice that it does not include the Git commands that you will be entering locally on your computer to add and commit changes. For more detailed instructions see the cheat sheet below.
@@ -15,12 +18,14 @@ The diagram above shows the normal workflow we will be using a class. Notice tha
 The subsections points below cover many of the common commands that we will be using daily in class.
 
 ### Getting new code from the class repo
+
 Running the three commands found here in your local project and you should be in sync with the class repo
 * `git fetch upstream` - this command will tell git to grab any changes to the class's repo and bring them into your project under the branch named `upstream/master`
 * `git checkout master` - this tells git to move you to your local `master` branch
 * `git merge upstream/master` - this command tells git to merge your local `master` branch with the `upstream/master` branch you fetched in the first command
 
 ### Making changes and committing code
+
 The commands below are used to save changes that you make locally
 * `git status` - shows you the current status of what is ready to be committed (staged) or what files need to be added
 * `git add <file_name>` - this will tell git to stage the file that you run the command with so that it can be committed
