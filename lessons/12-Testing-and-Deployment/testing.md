@@ -91,7 +91,10 @@ The python package coverage allows you to see how many of your lines of code are
 This can provide you with a detailed report of your "test coverage" and give you ideas for more tests to run.
 And if you hook coveralls.io up to your app you can add a badge to your github README.md so that you can "reward yourself" for increased coverage.
 
-## `codecov` with [codecov.io](http://codecov.io)
+## Codecov 
+
+[Codecov.io](http://codecov.io) is another service and python tool for visualizing code coverage with beautiful charts instead of those boring tables.
+And there are badges for your readme too!
 
 You can generate coverage reports using your `.travs.yml` and `pip install codecov` for any python package (django or otherwise).
 
@@ -147,23 +150,30 @@ cache:
   - apt
 ```
 
-It may help to add your codecov "Upload Token" to the travis.yml settings for your repo.
-Click on the "More Options" button in the upper right for the travis-ci page for your repo.
-Select the "Settings" gear menu item.
-Scroll down the setting until you find "Environment Variables".
-The environment variable name is `CODECOV_TOKEN` and the "value" is your "Upload Token" from your codecov.io accounts page.
+Your codecov token can be found at `codecov.io/gh/your_github_account_name/your_repository_name`.
+For example mine is at [https://codecov.io/gh/totalgood/civicu_app](https://codecov.io/gh/totalgood/civicu_app)
 
-You can do this for your local environment with:
+You can set the token in your local environment (on your laptop) with:
 
 ```bash
 export CODECOV_TOKEN="19abc123-hex8-9876-a881-8412af152dc0"  # USE *YOUR* TOKEN
 ```
 
-Or you can run it manually with
+And you can add your codecov "Upload Token" to the [travis-ci](http://travis-ci.org) settings for your repo.
+Click on the "More Options" button in the upper right for the travis-ci page for your repo.
+Select the "Settings" gear menu item.
+Scroll down the setting until you find "Environment Variables".
+The environment variable name is `CODECOV_TOKEN` and the "value" is your "Upload Token" from your codecov.io accounts page.
+
+
+Or you can run `codecov` manually with
 
 ```bash
 codecov --token=19abc123-hex8-9876-a881-8412af152dc0
 ```
+
+If you've `export`ed your environment variable on your laptop in your bash.rc file or somewhere that always runs when you log in, you don't have to provide the `--token`.
+
 
 ## Continuous integration
 
