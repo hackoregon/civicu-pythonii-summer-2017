@@ -5,8 +5,8 @@
 
 ## Testing
 
-- [Doctests](../12-Testing-and-Deployment/testing.md#Doctests)
-- [codecov.io](../12-Testing-and-Deployment/testing.md#Codecov)
+- [Doctests](../12-Testing-and-Deployment/testing.md#doctests)
+- [codecov.io](../12-Testing-and-Deployment/testing.md#dodecov)
 
 I discovered Codecov by clicking on a badge in another repo.
 If popular python packages that have a lot of recent activity (currenlty maintained and not stale) are using a tool, it's usually worth checking out.
