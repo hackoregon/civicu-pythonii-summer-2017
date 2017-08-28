@@ -27,6 +27,11 @@ We'll write both doctests and TestCase classes for our new labeler app views.
 
 A brief review of this advanced Python course to help you prepare for the exam.
 
+### Coursework
+
+- build a django app and push it to `github`, with at least one doctest and one `TestCase`
+- complete at least 10+2 exercisms with ~95% of tests passing
+
 ### Code Challenges
 
 The 3 code challenges may involve use of:
@@ -41,7 +46,7 @@ The 3 code challenges may involve use of:
 
 ### Multiple Choice Questions
 
-The 10 multiple choice questions each may have multiple answers.
+The 10+2 multiple choice questions each may have multiple answers.
 
 ### Outside Help (Resources)
 

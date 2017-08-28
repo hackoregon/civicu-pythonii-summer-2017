@@ -1,7 +1,7 @@
 ## Excercisms 9-10
 
-- exercism 9
-- exercism 10
+- exercism 9: [bob](../../student-work/hobson_lane/exercism/python/bob/README.md)
+- exercism 10: [run-length-encoding](../../student-work/hobson_lane/exercism/python/run-length-encoding/README.md)
 
 ## Testing
 
