@@ -10,3 +10,8 @@ def word_count(input):
     for word in word_list:
         counts[word] = counts.get(word,0) + 1
     return counts
+
+
+# from Collections import Counter
+# def word_count(input):
+#     return Counter(input.split())
