@@ -1,50 +1,39 @@
-from datetime import datetime
+import datetime
 import re
+import calendar
 
 def meetup_day(year, month, day, week):
-    year = year
-    print("Year: {}".format(year))
+    c = calendar.monthcalendar(year, month)
     day, week = day.lower(), week.lower()
-    print("Month: {}".format(month))
-    print("Day: {}".format(day))
-    # dow = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
-    #Get week number
+    #Get day index
+    days_list = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su']
+    day_num = days_list.index(day[0:2])
+    print(day_num)
+
+    #Get list of possible dates
+    possible_dates = []
+    for list in c:
+        if list[day_num] > 0:
+            possible_dates.append(list[day_num])
+    print(possible_dates)
+
+    #Determine week
     if week == "teenth":
-        week_num = 6
+        for date in possible_dates:
+            if (date > 12) & (date < 20):
+                day = date
+    elif week == "last":
+        day = possible_dates[-1]
     else:
         for character in week:
             try:
                 week_num = int(character)
             except:
                 continue
+        day = possible_dates[week_num - 1]
+    return datetime.date(year, month, day)
+    # print(year, month, day)
 
-    print("Week number: {}".format(week_num))
-
-    # datetime.date(year, month, )
-
-meetup_day(2013, 5, 'monday', '1st')
-
-
-
-# https://pymotw.com/2/calendar/
-# import calendar
-#
-# # Show every month
-# for month in range(1, 13):
-#
-#     # Compute the dates for each week that overlaps the month
-#     c = calendar.monthcalendar(2007, month)
-#     first_week = c[0]
-#     second_week = c[1]
-#     third_week = c[2]
-#
-#     # If there is a Thursday in the first week, the second Thursday
-#     # is in the second week.  Otherwise the second Thursday must
-#     # be in the third week.
-#     if first_week[calendar.THURSDAY]:
-#         meeting_date = second_week[calendar.THURSDAY]
-#     else:
-#         meeting_date = third_week[calendar.THURSDAY]
-#
-#     print '%3s: %2s' % (month, meeting_date)
+# meetup_day(2013, 5, 'Monday', 'teenth')
+#date(2013, 5, 13)
