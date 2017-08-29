@@ -23,7 +23,7 @@ How would you fix that?
 ```python
 >>> matcher = re.compile(r'Hi|hi|Hello|hello')
 >>> matcher.findall('Hi John, did you just say "hello Google" or something?')
-['Hi', 'hello']
+['Hi', 'hello', 'hi']
 ```
 
 
@@ -60,7 +60,7 @@ Here's that expression again with a repetition count range to give you some idea
 
 
 ```python
-... matcher = re.compile(r'([Hh]{1,1}(i|ello))')
+... matcher = re.compile(r'([Hh](i|ello))')
 ...
 >>> matcher.findall('Hi John, did you just say "hello Google" or something?')
 [('Hi', 'i'), ('hello', 'ello'), ('hi', 'i')]
@@ -69,7 +69,17 @@ Here's that expression again with a repetition count range to give you some idea
 ## In-Class Exercise
 
 Create a regular expression that can find all the floating point decimal numbers in a string, like $1000.00 or 1e3 or 1000.0001.
-Then coerce that string into a float (so you the dollar sign shouldn't be in your number string).
+Then coerce each of those number `str`s into `float`s (so the dollar sign shouldn't be in your number string).
 Write a unittest or doctest that checks 3 numbers in one string.
 If that's got you stumped, start with recognizing an integer, then work your way up.
+
+Here's an example doctest that should pass:
+
+```python
+def find_numbers(s):
+""" Finds all floating point values within a string and returns a list of those strings coerced into floats
+
+>>> find_numbers('Create a regular expression that can find all the floating point decimal numbers in a string, like $1000.00 or 1e3 or 1000.0001')
+[1000.0, 1000.0, 1000.0001]
+"""
 
