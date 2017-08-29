@@ -2,6 +2,8 @@
 
 1. Attendance
 2. Exercisms
+3. Using PIL to get Exif
+4. ManyToManyField for Image labels (tags)
 3. Django Views for `labeler` app
 4. Testing Django Views
 5. Review
@@ -11,6 +13,10 @@
 - exercism 11: [meetup](../../student-work/hobson_lane/exercism/python/meetup/README.md)
 - exercism 12: [rotational-cipher](../../student-work/hobson_lane/exercism/python/rotational-cipher/README.md)
 
+## ManyToManyField
+
+Let's add a ManyToManyField to our models.
+This will allow us (and our users) to add new labels and tag each image with multiple labels
 ## A View for User Labeling of Images
 
 We'll write a new view (and a new form and template to go along with it) to allow users to label the images we upload to our labeler app through the API of the image upload form.
@@ -27,6 +33,11 @@ We'll write both doctests and TestCase classes for our new labeler app views.
 
 A brief review of this advanced Python course to help you prepare for the exam.
 
+### Coursework
+
+- build a django app and push it to `github`, with at least one doctest and one `TestCase`
+- complete at least 10+2 exercisms with ~95% of tests passing
+
 ### Code Challenges
 
 The 3 code challenges may involve use of:
@@ -41,7 +52,7 @@ The 3 code challenges may involve use of:
 
 ### Multiple Choice Questions
 
-The 10 multiple choice questions each may have multiple answers.
+The 10+2 multiple choice questions each may have multiple answers.
 
 ### Outside Help (Resources)
 
