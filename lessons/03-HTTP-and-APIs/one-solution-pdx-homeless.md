@@ -21,11 +21,35 @@ with open('homeless.csv', 'w') as fout:
     print(total)
 ```
 
-    2009 2265
-    2011 7273
-    2013 7107
-    2015 1565
-    18210
+
+```python
+import json
+import requests
+
+for i in range(2000, 2015):
+    url = 'http://service.civicpdx.org/homeless/ethnicity/?format=json&page=1&year={}'.format(i)
+    print(url)
+    r = requests.get(url)
+    print(r.status_code)
+    print(json.dump(json.loads(r.content.decode()), indent=2))
+```
+
+    http://service.civicpdx.org/homeless/ethnicity/?format=json&page=1&year=2000
+    200
+
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-1-b6a60a5cbb89> in <module>()
+          7     r = requests.get(url)
+          8     print(r.status_code)
+    ----> 9     print(json.dump(json.loads(r.content.decode()), indent=2))
+    
+
+    TypeError: dump() missing 1 required positional argument: 'fp'
 
 
 
