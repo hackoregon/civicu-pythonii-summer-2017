@@ -81,14 +81,6 @@ To fix this warning, we need to always use dates with a timezone when working wi
 
 ```
 
-### `annotate` and `Count`
-
-```python
->>> from pprint import pprint
->>> counts = qs.filter(created_at__gt=jan1).values('cashier_created_by_id').annotate(count=Count('cashier_created_by_id'))
->>> pprint(list(counts))
-```
-
 ## Schemaless Django
 
 Our images are going to have a lot of metadata associated them.
