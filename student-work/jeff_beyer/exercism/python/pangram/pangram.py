@@ -9,7 +9,7 @@ The alphabet used consists of ASCII letters `a` to `z`, inclusive, and is case
 insensitive. Input will not contain non-ASCII symbols.
 '''
 def is_pangram(string):
-    for letter in range(ord('a'),ord('z')):
+    for letter in range(ord('a'), ord('z')+1):
         if chr(letter) not in string.lower():
             # If any letter isn't in there, we bounce.
             return False
