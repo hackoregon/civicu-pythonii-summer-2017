@@ -18,7 +18,7 @@ def meetup_day(year, month, weekday, descriptor):
         'teenth': 13,
                    }
 
-    start = date(year, month, DESCRIPTORS.get(descriptor, last(year, month)))
+    start = date(year, month, DESCRIPTORS.get(descriptor, last(year, month))) #.get(key, default)
     offset = list(day_name).index(weekday) - start.weekday()
     return start + timedelta(days = offset % 7)
 
