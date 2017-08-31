@@ -2,11 +2,11 @@
 
 ## Submitting Your Answers
 
-Submit your answers to all questions to my exam app that I created from the labeler app pattern.
+Submit your answers by pushing two python modules (.py files) to an `exam/` folder within your `student-work/` folder and issue a PR to my respoitory.
 
 ## Code Challenge
 
-All of your code for the three code challenges should be written in a single python module (.py file) called `exam.py`.
+All of your code for the three code challenges should be written in two python modules (`.py` files) called `exam.py` and `test_exam.py`.
 As you'll see later, this module will also contain your answers to the multiple choice questions.
 This file should be placed in the directory `student-work/your_name/exam/`, commited and pushed to your repository on github and then PRed to our class repository at `github.com/hackoregon/civicu-pythonii-summer-2017`.
 
@@ -61,16 +61,18 @@ If I run `json.loads(exam.MY_ANSWERS_JS)` it should return a list of 11 dictiona
 [
 { 
   'id': 0,
-  'my_answer': 'B'
+  'my_answer': 'B',
 },
 { 
   'id': 1,
-  'my_answer': 'D'
+  'my_answer': 'D',
 },
 ...
 {
   'id': 10,
-  'my_answer': 'ABCDEFG'
+  'my_answer': 'ABCDEFG',
+}
+]
 ```
 
 **HINT:** `zip` and `zip(*...)` will make things easier, but aren't required.
@@ -81,8 +83,6 @@ The json string will of, of-course, be much longer.
 - Bonus: Write a doctest for your module that verifies the length of the 4 lists.
 - Bonus: Populate these variables "programatically" using `globals()` within a function called `setup()` that is run in the global context of your module.
 
-
 ### Code Challenge 3
 
-Write a "unittest" that checks that each of the answers in your answer `exam.MY_ANSWERS` are what you intended.
-
+Create a file called `test_exam.py` and write a "unittest" that checks that each of the answers in your answer `exam.MY_ANSWERS` are what you intended.
