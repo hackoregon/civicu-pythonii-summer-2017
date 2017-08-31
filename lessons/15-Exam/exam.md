@@ -6,21 +6,23 @@ Submit your answers to all questions to my exam app that I created from the labe
 
 ## Code Challenge
 
-All of your code for the three code challenges should be written in a single python module (.py file) called `civiu_advanced_python_exam.py`.
+All of your code for the three code challenges should be written in a single python module (.py file) called `exam.py`.
 As you'll see later, this module will also contain your answers to the multiple choice questions.
 This file should be placed in the directory `student-work/your_name/exam/`, commited and pushed to your repository on github and then PRed to our class repository at `github.com/hackoregon/civicu-pythonii-summer-2017`.
 
 
 ### Challenge 1
 
-Write a function called `read_exam` that takes as its only input a string with the URL or a file system path to a *.CSV file.
-The default value for this single argument to your function should be "../../../lessons/shared-resources", but it doesn't have to work with this path to get full credit.
+Download the exam.csv file from here: `https://raw.githubusercontent.com/hackoregon/civicu-pythonii-summer-2017/ceasar/lessons/shared-resources/exam.csv`
 
-- If your function only works for a local path you get full credit.
+Write a function called `read_exam` that takes as its only input a string with the URL or a file system path to a *.CSV file.
+The default value for this single argument to your function should be a relative path from your exam.py script to `'../../../lessons/shared-resources/exam.csv'`, but it doesn't have to work with this path to get full credit.
+
+- If your function only works for a local path to a csv file you get full credit.
 - If it only works for a URL you get full credit plus a bonus point.
 - If it works for both a local file path **and** a URL you get 2 bonus points.
 
-Your fu
+
 
 global variables called "QUESTIONS" that contains the multiple choice questions stored in the CSV file "exam.csv" in the lessons/shared-resources/ folder within the github repository for this class, "ANSWERS", and "SUBMISSIONS" that each contain:
 
