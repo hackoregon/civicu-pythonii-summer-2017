@@ -1,0 +1,12 @@
+"question number","question","answer","A","B","C","D","E","F","G"
+0,"What python builtin type (comes with python in the standard library) is best for counting the number of occurences of values in a sequence or array.","B","defaultdict","Counter","values_count",".distinct()",".count_values()","len","dict"
+1,"What mutable python data type stores a mapping between keys and values, allows you to add new keys, and ensures that all keys are unique.","D","set","list","enum","dict","namedtuple","tuple","zip"
+2,"What python builtin function can be used to create a `list` of of 3-`tuple`s (triplets) out of 3 `list`s of objects.","B","dict","zip(*)","list","set","zip","iter","vars"
+3,"Which of the following help resources are only available in ipython/jupyter console or notebook (and are **not** available in a plain python interpreter or console)","ACF","? at the end of any variable in the workspace","vars()","[TAB] completion","dir()","help()","?? at the end of any variable",".__doc__"
+4,"Which of the following data types were changed significantly in python3.5 relative to python 2.7","AF","str","int","float","tuple","list","unicode","bool"
+5,"Which of the following operators can be used as unary operators in python","AGE","*","and","or","/","-","%","not"
+6,"Which of the following operators can be used as binary operators in python","ABCDEF","*","and","or","/","-","%","not"
+7,"What method can be used to retrieve all the variable names in your global context as strings","B","keys()","globals().keys()","locals().keys()","str()","list()","help()",
+8,"What builtin function could you use to assemble paths from a list of directories in python for cross-platform compatibility","CD","'/’.split()","'/’.join()","os.path.join()","os.path.sep.join()","dirs","os.dup","os.build"
+9,"What python builtin function can be used to sort a list of 2-tuples.","B","sortdict","sorted","sort","order","ordered","list","dict"
+10,"Which of the following are pythonic (part of `this` Zen of Python)","ABCDEFG","Readability counts.","Explicit is better than implicit.","Simple is better than complex.","There should be one-- and preferably only one --obvious way to do it.","Flat is better than nested.","Sparse is better than dense.","Errors should never pass silently."
