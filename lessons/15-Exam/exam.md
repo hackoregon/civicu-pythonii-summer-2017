@@ -6,7 +6,7 @@ Submit your answers by pushing two python modules (.py files) to an `exam/` fold
 
 ## Code Challenge
 
-All of your code for the three code challenges should be written in two python modules (.py files) called `exam.py` and `test_exam.py`.
+All of your code for the three code challenges should be written in two python modules (`.py` files) called `exam.py` and `test_exam.py`.
 As you'll see later, this module will also contain your answers to the multiple choice questions.
 This file should be placed in the directory `student-work/your_name/exam/`, commited and pushed to your repository on github and then PRed to our class repository at `github.com/hackoregon/civicu-pythonii-summer-2017`.
 
@@ -61,16 +61,18 @@ If I run `json.loads(exam.MY_ANSWERS_JS)` it should return a list of 11 dictiona
 [
 { 
   'id': 0,
-  'my_answer': 'B'
+  'my_answer': 'B',
 },
 { 
   'id': 1,
-  'my_answer': 'D'
+  'my_answer': 'D',
 },
 ...
 {
   'id': 10,
-  'my_answer': 'ABCDEFG'
+  'my_answer': 'ABCDEFG',
+}
+]
 ```
 
 **HINT:** `zip` and `zip(*...)` will make things easier, but aren't required.
