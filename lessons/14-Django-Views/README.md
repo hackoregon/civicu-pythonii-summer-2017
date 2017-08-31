@@ -2,6 +2,8 @@
 
 1. Attendance
 2. Exercisms
+3. Using PIL to get Exif
+4. ManyToManyField for Image labels (tags)
 3. Django Views for `labeler` app
 4. Testing Django Views
 5. Review
@@ -11,6 +13,10 @@
 - exercism 11: [meetup](../../student-work/hobson_lane/exercism/python/meetup/README.md)
 - exercism 12: [rotational-cipher](../../student-work/hobson_lane/exercism/python/rotational-cipher/README.md)
 
+## ManyToManyField
+
+Let's add a ManyToManyField to our models.
+This will allow us (and our users) to add new labels and tag each image with multiple labels
 ## A View for User Labeling of Images
 
 We'll write a new view (and a new form and template to go along with it) to allow users to label the images we upload to our labeler app through the API of the image upload form.
