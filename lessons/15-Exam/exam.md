@@ -12,7 +12,7 @@ This file should be placed in the directory `student-work/your_name/exam/`, comm
 
 ### Code Challenge 1
 
-Download the exam.csv file from here: `https://raw.githubusercontent.com/hackoregon/civicu-pythonii-summer-2017/ceasar/lessons/shared-resources/exam.csv`
+Download the exam.csv file from here: `https://raw.githubusercontent.com/hackoregon/civicu-pythonii-summer-2017/master/lessons/shared-resources/exam.csv`
 
 Write a function called `read_exam()` that takes as its only input a string with the URL or a file system path to a *.CSV file.
 The default value for this single argument to your function should be a relative path from your the path containing your `exam.py` script to the exam.csv file.
