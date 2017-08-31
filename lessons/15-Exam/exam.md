@@ -58,21 +58,10 @@ You'll need to correct the answers in the CSV file, because I will grade these a
 If I run `json.loads(exam.MY_ANSWERS_JS)` it should return a list of 11 dictionaries that looks like this:
 
 ```python
-[
-{ 
-  'id': 0,
-  'my_answer': 'B',
-},
-{ 
-  'id': 1,
-  'my_answer': 'D',
-},
+[{'id': 0, 'my_answer': 'B'},
+ {'id': 1, 'my_answer': 'D'},
 ...
-{
-  'id': 10,
-  'my_answer': 'ABCDEFG',
-}
-]
+ {'id': 10, 'my_answer': 'ABCDEFG'}]
 ```
 
 **HINT:** `zip` and `zip(*...)` will make things easier, but aren't required.
