@@ -1,6 +1,6 @@
 "question number","question","answer","A","B","C","D","E","F","G"
 0,"What python builtin type (comes with python in the standard library) is best for counting the number of occurences of values in a sequence or array.","O","defaultdict","Counter","values_count",".distinct()",".count_values()","len","dict"
-1,"What mutable python data type stores a mapping between keys and values, allows you to add new keys, and ensures that all keys are unique.","Q","set","list","enum","dict","namedtuple","tuple","zip"
+1,"What mutable python data type stores a mapping between keys and values allows you to add new keys and ensures that all keys are unique.","Q","set","list","enum","dict","namedtuple","tuple","zip"
 2,"What python builtin function can be used to create a `list` of of 3-`tuple`s (triplets) out of 3 `list`s of objects.","O","dict","zip(*)","list","set","zip","iter","vars"
 3,"Which of the following help resources are only available in ipython/jupyter console or notebook (and are **not** available in a plain python interpreter or console)","NPS","? at the end of any variable in the workspace","vars()","[TAB] completion","dir()","help()","?? at the end of any variable",".__doc__"
 4,"Which of the following data types were changed significantly in python3.5 relative to python 2.7","NS","str","int","float","tuple","list","unicode","bool"
