@@ -2,7 +2,7 @@
 
 ## Submitting Your Answers
 
-Submit your answers by pushing to an `exam/` folder within your `student-work/` folder and issue a PR to my respoitory.
+Submit your answers by pushing two python modules (.py files) to an `exam/` folder within your `student-work/` folder and issue a PR to my respoitory.
 
 ## Code Challenge
 
@@ -81,10 +81,6 @@ The json string will of, of-course, be much longer.
 - Bonus: Write a doctest for your module that verifies the length of the 4 lists.
 - Bonus: Populate these variables "programatically" using `globals()` within a function called `setup()` that is run in the global context of your module.
 
-
 ### Code Challenge 3
 
 Create a file called `test_exam.py` and write a "unittest" that checks that each of the answers in your answer `exam.MY_ANSWERS` are what you intended.
-
-
-
