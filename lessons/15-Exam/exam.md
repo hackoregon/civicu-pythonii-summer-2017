@@ -12,7 +12,7 @@ This file should be placed in the directory `student-work/your_name/exam/`, comm
 
 ### Code Challenge 1
 
-Download the exam.csv file from here: `https://raw.githubusercontent.com/hackoregon/civicu-pythonii-summer-2017/ceasar/lessons/shared-resources/exam.csv`
+Download the exam.csv file from here: `https://raw.githubusercontent.com/hackoregon/civicu-pythonii-summer-2017/master/lessons/shared-resources/exam.csv`
 
 Write a function called `read_exam()` that takes as its only input a string with the URL or a file system path to a *.CSV file.
 The default value for this single argument to your function should be a relative path from your the path containing your `exam.py` script to the exam.csv file.
@@ -58,21 +58,10 @@ You'll need to correct the answers in the CSV file, because I will grade these a
 If I run `json.loads(exam.MY_ANSWERS_JS)` it should return a list of 11 dictionaries that looks like this:
 
 ```python
-[
-{ 
-  'id': 0,
-  'my_answer': 'B',
-},
-{ 
-  'id': 1,
-  'my_answer': 'D',
-},
+[{'id': 0, 'my_answer': 'B'},
+ {'id': 1, 'my_answer': 'D'},
 ...
-{
-  'id': 10,
-  'my_answer': 'ABCDEFG',
-}
-]
+ {'id': 10, 'my_answer': 'ABCDEFG'}]
 ```
 
 **HINT:** `zip` and `zip(*...)` will make things easier, but aren't required.

@@ -1,0 +1,49 @@
+Interpreter Paths
+# Python 2.7 (32-bit)
+C:/Users/jbeyer/AppData/Local/Programs/Python/Python27/python.exe
+
+# Python 3.5.3 (64-bit)
+C:/Users/jbeyer/AppData/Local/Programs/Python/Python35/python.exe
+
+# Python 3.6.1 (32-bit)
+C:/Users/jbeyer/AppData/Local/Programs/Python/Python36-32/python.exe
+
+# Python 3.6.1 (64-bit - Anaconda)
+C:\Users\jbeyer\AppData\Local\Continuum\Anaconda3\python.exe
+
+Folders
+# Virtual Env Folder
+C:\Users\jbeyer\Envs
+# Project Folder
+C:\Users\jbeyer\Projects
+
+# To make a virtual environment
+*mkvirtualenv also accepts the -p argument*
+virtualenv -p <<Python EXE Path>> <<Env Destination DIR>>
+pip install <<packages>>
+
+# To activate a virtual environment
+workon <<env name>>
+
+# To associate a project folder with the active environment (use "\")
+setprojectdir <<project folder>>
+
+# To change to a project dir
+cdproject
+
+# To change to a project environment dir
+cdvirtualenv
+
+# To view the packages for an active environment
+lssitepackages
+
+# To see all virtualenvs
+lsvirtualenv
+
+# To deactivate a virtual environment
+deactivate
+
+# To remove a virtualenv
+rmvirtualenv
+rmdir /s <<env folder>>
+
