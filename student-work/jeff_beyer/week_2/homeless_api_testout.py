@@ -18,7 +18,7 @@ for year in range(2008, 2018):
     this_year_count = 0
     # Loop over the response json and pull the count value (pull 0 by default)
     for d in response.json():
-        this_year_count += d.get('count',0)
+        this_year_count += d.get('count', 0)
     # Store the count for this year in our yearly count dictionary
     yearly_count[year] = this_year_count
 

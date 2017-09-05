@@ -2,18 +2,17 @@
 
 ## Submitting Your Answers
 
-Submit your answers to all questions to my exam app that I created from the labeler app pattern.
+Submit your answers by pushing two python modules (.py files) to an `exam/` folder within your `student-work/` folder and issue a PR to my respoitory.
 
 ## Code Challenge
 
-All of your code for the three code challenges should be written in a single python module (.py file) called `exam.py`.
+All of your code for the three code challenges should be written in two python modules (`.py` files) called `exam.py` and `test_exam.py`.
 As you'll see later, this module will also contain your answers to the multiple choice questions.
 This file should be placed in the directory `student-work/your_name/exam/`, commited and pushed to your repository on github and then PRed to our class repository at `github.com/hackoregon/civicu-pythonii-summer-2017`.
 
-
 ### Code Challenge 1
 
-Download the exam.csv file from here: `https://raw.githubusercontent.com/hackoregon/civicu-pythonii-summer-2017/ceasar/lessons/shared-resources/exam.csv`
+Download the exam.csv file from here: `https://raw.githubusercontent.com/hackoregon/civicu-pythonii-summer-2017/master/lessons/shared-resources/exam.csv`
 
 Write a function called `read_exam()` that takes as its only input a string with the URL or a file system path to a *.CSV file.
 The default value for this single argument to your function should be a relative path from your the path containing your `exam.py` script to the exam.csv file.
@@ -59,19 +58,10 @@ You'll need to correct the answers in the CSV file, because I will grade these a
 If I run `json.loads(exam.MY_ANSWERS_JS)` it should return a list of 11 dictionaries that looks like this:
 
 ```python
-[
-{ 
-  'id': 0,
-  'my_answer': 'B'
-},
-{ 
-  'id': 1,
-  'my_answer': 'D'
-},
+[{'id': 0, 'my_answer': 'B'},
+ {'id': 1, 'my_answer': 'D'},
 ...
-{
-  'id': 10,
-  'my_answer': 'ABCDEFG'
+ {'id': 10, 'my_answer': 'ABCDEFG'}]
 ```
 
 **HINT:** `zip` and `zip(*...)` will make things easier, but aren't required.
@@ -82,7 +72,6 @@ The json string will of, of-course, be much longer.
 - Bonus: Write a doctest for your module that verifies the length of the 4 lists.
 - Bonus: Populate these variables "programatically" using `globals()` within a function called `setup()` that is run in the global context of your module.
 
-
 ### Code Challenge 3
 
-Write a "unittest" that checks that each of the answers in your answer `exam.MY_ANSWERS` are what you intended.
+Create a file called `test_exam.py` and write a "unittest" that checks that each of the answers in your answer `exam.MY_ANSWERS` are what you intended.

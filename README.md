@@ -6,7 +6,24 @@
 * Hobson Lane: [hobsonlane@gmail.com](mailto:hobsonlane@gmail.com)
 * Mark Wheeler: [wheelerma55@gmail.com](mailto:wheelerma55@gmail.com)
 
-## GitHub: http://github.com/hobson
+## GitHub Repos:
+
+You'll want to clone both of these 2 repos to your computer.
+
+1.  http://github.com/hack -- The Django App called `labeler` that we're building
+2.  http://github.com/totalgood/civicu_app -- My version of the Django App you'll build
+
+It may be possible to build your own version of the "Labeler" app (second link above) if you're able to read and type along in class.
+But it's nice to have the reference implementation in case something seems confusing or you miss a class.
+We'll try to tag versions of the software by their lesson number and name for each class when we add code.
+That way you can check out the version for a particular lesson before and be all caught up at the beginning of class
+For example
+
+* `$ git checkout 14-imageinfo` at the beginning of the class for lesson-14 to get all caught up
+* `$ git diff 14-imageinfo-done` at the end of the class to see if you missed anything during class
+* `$ git diff 14-imageinfo-enhanced` at the end of the class to see if there are some enhancements you'd like to add
+
+
 
 Welcome to the Civic U Python II class!
 
