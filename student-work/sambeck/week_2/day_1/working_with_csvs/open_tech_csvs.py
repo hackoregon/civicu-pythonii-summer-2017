@@ -66,12 +66,12 @@ def get_distances(routes, names, coords):
         try:
             (lat1, long1) = coords[a1]
             (lat2, long2) = coords[a2]
+            distances.append(geo_distance.distance(lat1, long1, lat2, long2))
         except KeyError:
             # print('fail on key 1: {}'.format(a1))
             distances.append('airport not found: {}'.format(a1))
             errors += 1
             continue
-        distances.append(geo_distance.distance(lat1, long1, lat2, long2))
     print('Found distances of {} routes with {} errors.'.format(len(distances),
                                                                 errors))
     print('EX:')
