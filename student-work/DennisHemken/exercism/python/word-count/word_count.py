@@ -1,6 +1,9 @@
 import string
 
 def prep_string(sentence):
+    #set all characters to lower case to avoid miscounts due to capitalization
+    sentence = sentence.lower()
+    
     #strip out non white space punctuation and replace with white space
     for char in string.punctuation:
         sentence = sentence.replace(char, " ")
@@ -10,10 +13,10 @@ def prep_string(sentence):
 def word_count(sample):
     
     process_sample = prep_string(sample)
-   # print(process_sample)
+#    print(process_sample)
     count = {}
     for word in process_sample:
-     #   print(word)
+#        print(word)
         if word in count.keys():
             count[word] += 1
         else:
@@ -21,8 +24,11 @@ def word_count(sample):
             
     return count
 
+"""
+test_sample = "one fish two fish red fish blue fish"
 
-#test_sample = "one fish two fish red fish blue fish"
-
-#print(word_count(test_sample))
+print(word_count(test_sample))
  
+test_sample = 'go Go GO Stop stop'
+print(word_count(test_sample))
+"""
