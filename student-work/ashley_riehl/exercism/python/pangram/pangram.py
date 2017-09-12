@@ -19,3 +19,5 @@ def is_pangram(input):
         return False
 
 is_pangram("Something here and there.")
+
+#Could've used filter
